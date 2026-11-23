@@ -1,0 +1,2171 @@
+<!doctype html>
+<html lang="ru" data-theme="paper">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Механика по-человечески — конспект и практикум</title>
+  <meta name="description" content="Редакторский конспект по механике и практикум по 29 вопросам: кинематика, динамика, вращение, СТО, колебания, волны и акустика. Формулы, схемы, разборы и шпаргалка." />
+  <meta name="theme-color" content="#18231f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d95732'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23fff8ec'%3E%CF%86%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="vendor/katex/katex.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m13 6 6 6-6 6"></path></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5"></path><path d="m6 11 6-6 6 6"></path></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"></path></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"></path></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"></path></symbol>
+  </svg>
+
+  <div class="progress-rail" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="В начало">
+      <span class="brand-mark">φ</span>
+      <span class="brand-copy">
+        <strong>Механика</strong>
+        <small>конспект · 1 семестр</small>
+      </span>
+    </a>
+
+    <nav class="topnav" aria-label="Основная навигация">
+      <a href="#about">О конспекте</a>
+      <a href="#route">Маршрут</a>
+      <a href="#practice">Практикум</a>
+      <a href="#cheatsheet">Шпаргалка</a>
+      <a href="#quiz">Проверь себя</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <span class="now-reading" id="nowReading">Введение</span>
+      <button class="search-trigger" id="searchTrigger" type="button" aria-haspopup="dialog">
+        <svg class="icon"><use href="#i-search"></use></svg>
+        <span>Поиск</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему" title="Светлая / тёмная тема">
+        <svg class="icon icon-sun"><use href="#i-sun"></use></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"></use></svg>
+      </button>
+      <button class="icon-button mobile-menu" id="mobileMenu" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <svg class="icon"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" hidden>
+    <nav aria-label="Мобильная навигация">
+      <a href="#about">О конспекте</a>
+      <a href="#route">Маршрут</a>
+      <a href="#practice">Практикум</a>
+      <a href="#cheatsheet">Шпаргалка</a>
+      <a href="#quiz">Проверь себя</a>
+      <a href="#source">Источник</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> 1 семестр · 9 пар · практикум</p>
+          <h1>Механика<br /><em>по-человечески</em></h1>
+          <p class="hero-lead">
+            От кинематики до волн, СТО и затухающих колебаний — конспект, в котором
+            формулы объясняют, а не просто занимают место. Плюс практикум по вопросам
+            из приложенного документа.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#k01">
+              Начать с кинематики
+              <svg class="icon"><use href="#i-arrow"></use></svg>
+            </a>
+            <a class="button button-ghost" href="#practice">Практикум: 29 вопросов</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>09</dt><dd>глав конспекта</dd></div>
+            <div><dt>19</dt><dd>страниц источника</dd></div>
+            <div><dt>29</dt><dd>вопросов практикума</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-crosshair"></div>
+          <svg class="orbit" viewBox="0 0 580 580" role="presentation">
+            <defs>
+              <radialGradient id="coreGrad" cx="38%" cy="34%" r="70%">
+                <stop offset="0%" stop-color="#fff4d8" />
+                <stop offset="26%" stop-color="#ff9a61" />
+                <stop offset="62%" stop-color="#d95732" />
+                <stop offset="100%" stop-color="#652615" />
+              </radialGradient>
+              <radialGradient id="haloGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ff7448" stop-opacity=".24" />
+                <stop offset="100%" stop-color="#ff7448" stop-opacity="0" />
+              </radialGradient>
+              <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="12" />
+              </filter>
+              <marker id="arrowCream" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#f4ead8" />
+              </marker>
+              <marker id="arrowOrange" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff7a4e" />
+              </marker>
+            </defs>
+
+            <circle cx="290" cy="290" r="238" fill="url(#haloGrad)" />
+            <circle cx="290" cy="290" r="224" class="orbit-line orbit-faint" />
+            <circle cx="290" cy="290" r="176" class="orbit-line orbit-faint" stroke-dasharray="2 9" />
+            <ellipse cx="290" cy="290" rx="244" ry="88" class="orbit-line" transform="rotate(-28 290 290)" />
+            <ellipse cx="290" cy="290" rx="244" ry="88" class="orbit-line orbit-dashed" transform="rotate(52 290 290)" />
+
+            <g class="orbit-spinner">
+              <circle cx="521" cy="214" r="6.5" fill="#ff7a4e" />
+              <circle cx="521" cy="214" r="15" fill="none" stroke="#ff7a4e" stroke-opacity=".28" />
+            </g>
+            <g class="orbit-spinner orbit-spinner-reverse">
+              <circle cx="117" cy="297" r="4.5" fill="#f4ead8" />
+            </g>
+
+            <line x1="290" y1="290" x2="447" y2="176" class="vector-line" marker-end="url(#arrowCream)" />
+            <line x1="290" y1="290" x2="398" y2="371" class="vector-line vector-orange" marker-end="url(#arrowOrange)" />
+            <line x1="290" y1="290" x2="290" y2="94" class="vector-line vector-thin" marker-end="url(#arrowCream)" />
+
+            <circle cx="290" cy="290" r="45" fill="#ff7448" opacity=".34" filter="url(#softGlow)" />
+            <circle cx="290" cy="290" r="21" fill="url(#coreGrad)" />
+            <circle cx="283" cy="282" r="5" fill="#fff8e8" opacity=".65" />
+
+            <text x="456" y="168" class="svg-label">r</text>
+            <text x="409" y="398" class="svg-label svg-label-orange">v</text>
+            <text x="302" y="86" class="svg-label">ω</text>
+            <text x="331" y="278" class="svg-small">O</text>
+            <text x="62" y="508" class="svg-mono">r(t) → v(t) → a(t)</text>
+          </svg>
+
+          <div class="art-chip chip-a">
+            <span>лоренц-фактор</span>
+            <strong>γ = 1 / √(1 − β²)</strong>
+          </div>
+          <div class="art-chip chip-b">
+            <span>энергия колебаний</span>
+            <strong>E = ½ mω²A²</strong>
+          </div>
+          <div class="art-caption"><span>φ</span> конспект · редакция 2026</div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span> листайте вниз</div>
+    </section>
+
+    <section class="section-shell preface" id="about">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Перед стартом</p>
+        <h2>Не учебник. Тетрадь, которую довели до ума.</h2>
+        <p class="section-dek">
+          Это редакторская версия конспекта девяти пар. Мы сохранили авторскую интонацию,
+          собрали разрозненные записи в маршрут и привели формулы к единому виду.
+        </p>
+      </div>
+
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="principle-num">01</span>
+          <h3>Сначала смысл</h3>
+          <p>Каждая тема начинается с вопроса «зачем это нужно?», а не с формулы на полстраницы.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-num">02</span>
+          <h3>Формулы сверены</h3>
+          <p>Опечатки источника исправлены. Спорные места отмечены плашкой «Сверено» — без тихих правок.</p>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-num">03</span>
+          <h3>Можно читать точечно</h3>
+          <p>Девять независимых глав, поиск по тексту и шпаргалка в конце. Заходите с любой стороны.</p>
+        </article>
+      </div>
+
+      <p class="source-disclaimer reveal">
+        <strong>Что именно изменено:</strong> структура, набор формул, орфография и повторы.
+        Физический смысл и последовательность рассуждений — из исходного конспекта.
+        Оригинал из 19 страниц доступен в разделе <a href="#source">«Источник»</a>.
+      </p>
+    </section>
+
+    <section class="section-shell route-section" id="route">
+      <div class="section-heading route-heading reveal">
+        <div>
+          <p class="section-kicker">Маршрут</p>
+          <h2>Девять пар — один маршрут</h2>
+        </div>
+        <p class="route-aside">Можно идти подряд, а можно прыгнуть сразу к СТО, колебаниям или практикуму.</p>
+      </div>
+
+      <div class="route-grid">
+        <a class="route-card reveal" href="#k01">
+          <span class="route-num">01</span>
+          <span class="route-body"><strong>Кинематика</strong><small>точка, координаты, производные</small></span>
+          <span class="route-page">с. 2–3</span>
+        </a>
+        <a class="route-card reveal" href="#k02">
+          <span class="route-num">02</span>
+          <span class="route-body"><strong>Векторы и повороты</strong><small>нормальное ускорение, ω и ε</small></span>
+          <span class="route-page">с. 3–5</span>
+        </a>
+        <a class="route-card reveal" href="#k03">
+          <span class="route-num">03</span>
+          <span class="route-body"><strong>Ньютон и энергия</strong><small>силы, работа, потенциал</small></span>
+          <span class="route-page">с. 5–7</span>
+        </a>
+        <a class="route-card reveal" href="#k04">
+          <span class="route-num">04</span>
+          <span class="route-body"><strong>Момент и инерция</strong><small>вращение, диск, центр масс</small></span>
+          <span class="route-page">с. 7–10</span>
+        </a>
+        <a class="route-card reveal" href="#k05">
+          <span class="route-num">05</span>
+          <span class="route-body"><strong>Гироскоп</strong><small>прецессия, сохранение L</small></span>
+          <span class="route-page">с. 10–11</span>
+        </a>
+        <a class="route-card reveal" href="#k06">
+          <span class="route-num">06</span>
+          <span class="route-body"><strong>СТО: время и длина</strong><small>γ, замедление, сокращение</small></span>
+          <span class="route-page">с. 12–13</span>
+        </a>
+        <a class="route-card reveal" href="#k07">
+          <span class="route-num">07</span>
+          <span class="route-body"><strong>Преобразования Лоренца</strong><small>координаты и скорости</small></span>
+          <span class="route-page">с. 14–15</span>
+        </a>
+        <a class="route-card reveal" href="#k08">
+          <span class="route-num">08</span>
+          <span class="route-body"><strong>Релятивистская динамика</strong><small>импульс, масса, E = mc²</small></span>
+          <span class="route-page">с. 15–16</span>
+        </a>
+        <a class="route-card reveal" href="#k09">
+          <span class="route-num">09</span>
+          <span class="route-body"><strong>Колебания</strong><small>пружина, маятник, затухание</small></span>
+          <span class="route-page">с. 16–19</span>
+        </a>
+        <a class="route-card route-card-practice reveal" href="#practice">
+          <span class="route-num">Q</span>
+          <span class="route-body"><strong>Практикум по вопросам</strong><small>29 разборов: от нормального ускорения до интервала</small></span>
+          <span class="route-page">6 тем · 29 вопросов</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="reading-layout">
+      <aside class="rail" aria-label="Содержание конспекта">
+        <div class="rail-sticky">
+          <p class="rail-label">Содержание</p>
+          <nav class="rail-nav">
+            <a class="rail-link" href="#k01" data-section="k01"><span>01</span>Кинематика</a>
+            <a class="rail-link" href="#k02" data-section="k02"><span>02</span>Векторы и повороты</a>
+            <a class="rail-link" href="#k03" data-section="k03"><span>03</span>Ньютон и энергия</a>
+            <a class="rail-link" href="#k04" data-section="k04"><span>04</span>Момент и инерция</a>
+            <a class="rail-link" href="#k05" data-section="k05"><span>05</span>Гироскоп</a>
+            <a class="rail-link" href="#k06" data-section="k06"><span>06</span>СТО: время и длина</a>
+            <a class="rail-link" href="#k07" data-section="k07"><span>07</span>Лоренц</a>
+            <a class="rail-link" href="#k08" data-section="k08"><span>08</span>Релятивистская динамика</a>
+            <a class="rail-link" href="#k09" data-section="k09"><span>09</span>Колебания</a>
+          </nav>
+          <div class="rail-progress">
+            <div class="rail-progress-track"><span id="railProgress"></span></div>
+            <div class="rail-progress-copy"><span>Прочитано</span><strong id="progressPct">0%</strong></div>
+          </div>
+          <a class="rail-extra" href="#practice"><span>↳</span> Практикум · 29</a>
+          <a class="rail-extra" href="#cheatsheet"><span>↳</span> Шпаргалка</a>
+          <a class="rail-extra" href="#quiz"><span>↳</span> Проверь себя</a>
+          <a class="rail-extra" href="#source"><span>↳</span> Оригинал</a>
+        </div>
+      </aside>
+
+      <article class="chapters">
+        <!-- 01 -->
+        <section class="chapter" id="k01" data-title="Кинематика" data-pages="2,3">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">01</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Первая пара</p>
+              <h2 class="chapter-title">Кинематика: описать, не объясняя</h2>
+              <p class="chapter-dek">Материальная точка, системы координат и три производные, с которых начинается вся механика.</p>
+              <div class="chapter-meta"><span>с. 2–3</span><span>4 минуты</span><button class="source-link" type="button" data-page="2">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Кинематика — это геометрия движения. Она отвечает на вопросы «где?», «куда?» и «как быстро?», но принципиально не спрашивает «почему?». Причины движения — уже территория динамики.</p>
+
+              <div class="definition-grid">
+                <div class="definition">
+                  <span class="definition-label">Материальная точка</span>
+                  <p>Тело, размерами и формой которого в данной задаче можно пренебречь.</p>
+                </div>
+                <div class="definition">
+                  <span class="definition-label">Система отсчёта</span>
+                  <p>Тело отсчёта, связанная с ним система координат и часы. Без последних «движение» не измерить.</p>
+                </div>
+              </div>
+
+              <p>В декартовой системе вектор задаётся проекциями на оси. В сферической — длиной и двумя углами. Это не разные физики, а два способа назвать одну и ту же точку.</p>
+
+              <figure class="figure figure-spherical">
+                <div class="figure-art">
+                  <svg viewBox="0 0 460 330" role="img" aria-label="Сферические координаты точки P: радиус r, угол theta от оси z и угол phi в плоскости xy">
+                    <defs>
+                      <marker id="axisArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M0 0 10 5 0 10Z" fill="currentColor" />
+                      </marker>
+                    </defs>
+                    <g class="fig-axis" marker-end="url(#axisArrow)">
+                      <line x1="76" y1="268" x2="404" y2="268" />
+                      <line x1="76" y1="268" x2="76" y2="34" />
+                      <line x1="76" y1="268" x2="22" y2="310" />
+                    </g>
+                    <text x="411" y="274" class="fig-label">y</text>
+                    <text x="67" y="25" class="fig-label">z</text>
+                    <text x="8" y="318" class="fig-label">x</text>
+                    <line x1="76" y1="268" x2="258" y2="162" class="fig-vector" marker-end="url(#axisArrow)" />
+                    <text x="183" y="146" class="fig-label fig-label-accent">r</text>
+                    <circle cx="258" cy="162" r="5.5" class="fig-point" />
+                    <text x="267" y="151" class="fig-label">P</text>
+                    <line x1="258" y1="162" x2="258" y2="268" class="fig-dash" />
+                    <line x1="258" y1="268" x2="76" y2="268" class="fig-dash" />
+                    <path d="M 86 268 A 64 64 0 0 0 134 226" class="fig-angle" />
+                    <text x="128" y="258" class="fig-label fig-label-small">φ</text>
+                    <path d="M 76 218 A 50 50 0 0 0 112 228" class="fig-angle" />
+                    <text x="92" y="208" class="fig-label fig-label-small">θ</text>
+                    <text x="271" y="257" class="fig-small">r sin θ</text>
+                    <text x="152" y="292" class="fig-small">r sin θ cos φ</text>
+                    <text x="265" y="208" class="fig-small">r cos θ</text>
+                  </svg>
+                </div>
+                <figcaption>Сферические координаты: длина <em>r</em> и два угла. Схема перерисована из конспекта.</figcaption>
+              </figure>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Переход к декартовым координатам</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{cases}
+                    x=r\sin\theta\cos\varphi,\\
+                    y=r\sin\theta\sin\varphi,\\
+                    z=r\cos\theta.
+                  \end{cases}
+                $$</div>
+                <p class="formula-caption">θ — угол от оси <em>z</em>, φ — угол в плоскости <em>xy</em>; <em>r</em> ≥ 0, 0 ≤ θ ≤ π.</p>
+              </div>
+
+              <h3 class="subhead">Три производные: скорость, ускорение и путь</h3>
+              <p>Радиус-вектор описывает положение. Первая производная по времени — скорость, вторая — ускорение. Это и есть весь «алфавит» кинематики.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Язык движения</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \Delta\vec r &amp;= \vec r(t+\Delta t)-\vec r(t),\\
+                    \vec v_{\mathrm{avg}} &amp;= \frac{\Delta\vec r}{\Delta t},\\[2pt]
+                    \vec v &amp;= \lim_{\Delta t\to 0}\frac{\Delta\vec r}{\Delta t}
+                    =\frac{d\vec r}{dt},\\[2pt]
+                    \vec a &amp;= \frac{d\vec v}{dt}=\frac{d^2\vec r}{dt^2}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">В пределе Δt → 0 средняя скорость превращается в мгновенную.</p>
+              </div>
+
+              <div class="split-note">
+                <div>
+                  <h3 class="subhead">Прямая и обратная задачи</h3>
+                  <p><strong>Прямая:</strong> известно <em>r</em>(<em>t</em>) — дифференцированием находим скорость и ускорение. Решение единственное.</p>
+                  <p><strong>Обратная:</strong> известно <em>a</em>(<em>t</em>) — интегрированием восстанавливаем скорость и положение. Без начальных условий решение не единственное: получится целое семейство траекторий.</p>
+                </div>
+              </div>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Обратная задача с начальными условиями</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec v(t) &amp;= \vec v_0+\int_0^t \vec a(t')\,dt',\\
+                    \vec r(t) &amp;= \vec r_0+\int_0^t \vec v(t')\,dt',\\
+                    S &amp;= \int_{t_1}^{t_2}\left|\vec v(t)\right|dt.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Путь <em>S</em> — интеграл от модуля скорости; для прямолинейного движения без разворотов он совпадает с перемещением.</p>
+              </div>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Классическое сложение скоростей</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec v_{12} &amp;=\vec v_1-\vec v_2,\\
+                    \left|\vec v_{12}\right| &amp;=\sqrt{v_1^2+v_2^2}
+                    \qquad\left(\vec v_1\perp\vec v_2\right).
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Для перпендикулярных движений модуль относительной скорости — гипотенуза: 60 и 80 км/ч дают 100 км/ч.</p>
+              </div>
+
+              <div class="callout">
+                <span class="callout-label">Мини-пример</span>
+                <p><strong>Тяга 3 Н, трение 8 Н.</strong> Пока тело движется, равнодействующая равна 3 − 8 = −5 Н и направлена против скорости. Тело тормозит; после остановки сила трения покоя может уравновесить тягу.</p>
+              </div>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«Прямая задача решается однозначно, обратная — нет». В конспекте это сказано без церемоний, и это, пожалуй, главный практический вывод первой пары.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Кинематика описывает движение, но не объясняет его причину.</li>
+                  <li>Скорость и ускорение — первая и вторая производные радиус-вектора.</li>
+                  <li>Обратная задача без <em>v</em>₀ и <em>r</em>₀ имеет бесконечно много решений.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Известно ускорение <em>a</em>(<em>t</em>) и начальное положение <em>r</em>₀, но не известна начальная скорость. Можно ли однозначно восстановить траекторию?</p>
+                  <p class="check-answer">Нет. Интегрирование даст скорость с произвольной постоянной <em>v</em>₀; каждая такая постоянная задаёт свою траекторию.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Зачем три координаты?</h4>
+                <p>Положение точки в пространстве — три степени свободы. Поэтому и координат три, независимо от того, декартовы они или сферические.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Почему интеграл?</h4>
+                <p>Ускорение говорит, как быстро меняется скорость. Чтобы получить саму скорость, нужно «накопить» эти изменения — сложить бесконечно малые приращения.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section class="chapter" id="k02" data-title="Векторы и повороты" data-pages="3,4,5">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">02</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Вторая пара</p>
+              <h2 class="chapter-title">Векторы, повороты, ускорение</h2>
+              <p class="chapter-dek">Почему ускорение раскладывается на «быстрее» и «в сторону» — и при чём здесь радиус кривизны.</p>
+              <div class="chapter-meta"><span>с. 3–5</span><span>4 минуты</span><button class="source-link" type="button" data-page="3">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Вектор можно записать как «длина × единичный вектор». Для движения это особенно удобно: направление и модуль меняются по отдельности — и ускорение тоже распадается на две честные части.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Естественный способ</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \vec a=\frac{d}{dt}\left(v\vec\tau\right)
+                  =\dot v\,\vec\tau+v\,\frac{d\vec\tau}{dt}.
+                $$</div>
+                <p class="formula-caption">τ — единичный вектор касательной; <em>v</em> — модуль скорости. Первое слагаемое отвечает за изменение быстроты, второе — за поворот.</p>
+              </div>
+
+              <figure class="figure figure-circle">
+                <div class="figure-art">
+                  <svg viewBox="0 0 460 300" role="img" aria-label="Движение по окружности: скорость направлена по касательной, нормальное ускорение — к центру">
+                    <circle cx="225" cy="154" r="102" class="fig-circle" />
+                    <circle cx="225" cy="154" r="3.5" class="fig-point" />
+                    <circle cx="306" cy="84" r="5.5" class="fig-point-accent" />
+                    <line x1="225" y1="154" x2="306" y2="84" class="fig-dash" />
+                    <line x1="306" y1="84" x2="380" y2="28" class="fig-vector" marker-end="url(#axisArrow)" />
+                    <line x1="306" y1="84" x2="248" y2="139" class="fig-vector fig-vector-accent" marker-end="url(#axisArrow)" />
+                    <path d="M 306 84 l 24 6 l -9 21" class="fig-right-angle" />
+                    <text x="373" y="22" class="fig-label">v</text>
+                    <text x="235" y="136" class="fig-label fig-label-accent">aₙ</text>
+                    <text x="263" y="68" class="fig-label fig-label-small">R</text>
+                    <text x="165" y="158" class="fig-label fig-label-small">O</text>
+                    <text x="328" y="247" class="fig-small">aτ меняет |v|</text>
+                    <text x="328" y="266" class="fig-small">aₙ меняет направление</text>
+                  </svg>
+                </div>
+                <figcaption>Касательная и нормаль: две ортогональные оси, в которых удобно читать ускорение.</figcaption>
+              </figure>
+
+              <p>Если точка движется по окружности, вектор касательной поворачивается. Из подобия треугольников скоростей получается знаменитое отношение:</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Нормальное и касательное ускорение</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \frac{d\vec\tau}{dt} &amp;= \frac{v}{R}\,\vec n,\\
+                    a_n &amp;= \frac{v^2}{R}, \qquad a_\tau=\dot v,\\
+                    \left|\vec a\right| &amp;= \sqrt{a_n^2+a_\tau^2}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">n — единичная нормаль к траектории, направленная к центру кривизны. Для равномерного движения по окружности <em>a</em>τ = 0, но <em>a</em>ₙ ≠ 0.</p>
+              </div>
+
+              <h3 class="subhead">Вращение: углы тоже имеют производные</h3>
+              <p>Бесконечно малый поворот удобно считать вектором <em>d</em>φ, направленным вдоль оси вращения. Тогда линейное перемещение точки — это векторное произведение.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Связь поступательного и вращательного</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    d\vec r &amp;= d\vec\varphi\times\vec r,\\
+                    \vec v &amp;= \vec\omega\times\vec r,\\
+                    v &amp;= \omega R,\\
+                    \vec\omega &amp;= \frac{d\vec\varphi}{dt},\qquad
+                    \vec\varepsilon=\frac{d\vec\omega}{dt}=\frac{d^2\vec\varphi}{dt^2}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">В конспекте угловое ускорение обозначено β; здесь используем ε, чтобы не путать с релятивистским β = v/c.</p>
+              </div>
+
+              <p>Дифференцируя <em>v</em> = ω × <em>r</em>, получаем полное ускорение при вращении:</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Ускорение при вращении</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \vec a=\vec\varepsilon\times\vec r+\vec\omega\times\left(\vec\omega\times\vec r\right).
+                $$</div>
+                <p class="formula-caption">Первое слагаемое — касательное ускорение, второе — центростремительное. В тетради оно записано короче: [β, r] + [ω, v].</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Сверено</span>
+                <p>В исходнике в формуле ускорения стоит <em>a</em> = [β, r] + [ω, v]. Это верно, если <em>v</em> = [ω, r]; в развёрнутом виде второе слагаемое равно ω × (ω × <em>r</em>) и направлено к оси вращения.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Тангенциальное ускорение меняет модуль скорости, нормальное — направление.</li>
+                  <li>При равномерном движении по окружности ускорение не равно нулю.</li>
+                  <li>Вращение описывается теми же схемами, что и поступательное: ω вместо <em>v</em>, ε вместо <em>a</em>.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Тело движется по окружности с постоянной по модулю скоростью. Есть ли у него ускорение?</p>
+                  <p class="check-answer">Да. Направление скорости непрерывно меняется, поэтому есть нормальное ускорение <em>a</em>ₙ = <em>v</em>²/<em>R</em>.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Кривизна — это поворот</h4>
+                <p>Чем сильнее поворачивается касательная на единицу пути, тем меньше радиус кривизны и тем больше нормальное ускорение.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Векторное произведение</h4>
+                <p>Направление ω × <em>r</em> задаётся правилом правой руки. Модуль равен ωR sin α; для движения по окружности α = 90°.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section class="chapter" id="k03" data-title="Ньютон и энергия" data-pages="5,6,7">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">03</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Третья пара</p>
+              <h2 class="chapter-title">Ньютон, силы и энергия</h2>
+              <p class="chapter-dek">Три закона, консервативное поле и потенциальная энергия как запасённая работа.</p>
+              <div class="chapter-meta"><span>с. 5–7</span><span>5 минут</span><button class="source-link" type="button" data-page="5">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Второй закон Ньютона в современной записи — это не <em>F</em> = <em>ma</em>, а <em>F</em> = <em>dp</em>/<em>dt</em>. В классической механике с постоянной массой одно переходит в другое; в релятивистской — уже нет.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Второй закон в импульсной форме</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \vec F=\frac{d\vec p}{dt},\qquad
+                  \vec p=m\vec v.
+                $$</div>
+                <p class="formula-caption">Если <em>F</em> = 0, импульс сохраняется. Это следствие, которым пользуются чаще, чем самой формулой.</p>
+              </div>
+
+              <h3 class="subhead">Третий закон и масса</h3>
+              <p>Силы взаимодействия двух тел равны по модулю и противоположны по направлению. Поэтому изменения импульсов тоже противоположны — и по этому изменению можно сравнивать массы.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Взаимодействие двух тел</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec F_{12} &amp;= -\vec F_{21},\\
+                    \Delta\vec p_1 &amp;= -\Delta\vec p_2,\\
+                    m_1\Delta\vec v_1 &amp;= -m_2\Delta\vec v_2.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Отсюда <em>m</em>₂/<em>m</em>₁ = |Δ<em>v</em>₁|/|Δ<em>v</em>₂|: более массивное тело меньше меняет скорость.</p>
+              </div>
+
+              <h3 class="subhead">Консервативные и диссипативные силы</h3>
+              <p>Работа консервативной силы не зависит от формы пути — важен только начальный и конечный пункт. У диссипативных сил (например, трения) работа зависит от траектории, а механическая энергия переходит в тепло.</p>
+
+              <div class="definition-grid definition-grid-three">
+                <div class="definition"><span class="definition-label">Консервативная</span><p>Работа по замкнутому контуру равна нулю. Примеры: тяжесть, упругость, кулоновская сила.</p></div>
+                <div class="definition"><span class="definition-label">Диссипативная</span><p>Работа зависит от пути и обычно отрицательна. Пример: трение.</p></div>
+                <div class="definition"><span class="definition-label">Поле сил</span><p>Каждой точке пространства сопоставлен вектор силы. Гравитация — центральное поле.</p></div>
+              </div>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Гравитационная работа и потенциал</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec F &amp;=-G\frac{m_1m_2}{r^2}\,\hat{\vec r},\\
+                    A &amp;=\int_A^B\vec F\cdot d\vec r
+                    =Gm_1m_2\left(\frac{1}{r_B}-\frac{1}{r_A}\right)
+                    =-\Delta U,\\
+                    U &amp;=-G\frac{m_1m_2}{r}+C.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Ноль потенциальной энергии обычно выбирают на бесконечности. Тогда для связанной системы <em>U</em> &lt; 0.</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Сверено</span>
+                <p>В конспекте гравитационная постоянная местами записана как γ — след лекции, где её «переименовали». Здесь используем стандартное <em>G</em>: γ занята Лоренц-фактором.</p>
+              </aside>
+
+              <h3 class="subhead">Полная механическая энергия</h3>
+              <p>Изменение кинетической энергии равно работе всех сил. Если разделить силы на консервативные и сторонние, работу консервативных можно записать через убыль потенциальной энергии.</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Баланс энергии</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \Delta E_k &amp;= A_{\mathrm{cons}}+A_{\mathrm{ext}},\\
+                    \Delta E_k+\Delta U &amp;= A_{\mathrm{ext}},\\
+                    \Delta E &amp;= A_{\mathrm{ext}}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Если сторонние силы не работают, <em>E</em> = <em>E</em>ₖ + <em>U</em> сохраняется. Для системы многих частиц <em>U</em> = ½ Σᵢ Σⱼ≠ᵢ <em>U</em>ᵢⱼ.</p>
+              </div>
+
+              <div class="callout">
+                <span class="callout-label">Частный случай</span>
+                <p>Если сила перпендикулярна перемещению, её работа равна нулю: <em>A</em> = ∫<em>F</em>·<em>dr</em> = 0. Поэтому на круговой орбите сила тяготения не совершает работу ни за половину периода, ни за целый оборот — расстояние до центра не меняется.</p>
+              </div>
+
+              <h3 class="subhead">Сила как градиент потенциала</h3>
+              <p>Потенциальная энергия — скалярное поле. Его градиент показывает направление самого быстрого роста, а сила направлена в противоположную сторону — туда, где потенциальная энергия убывает.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Связь силы и потенциала</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \nabla &amp;=\vec i\,\frac{\partial}{\partial x}
+                    +\vec j\,\frac{\partial}{\partial y}
+                    +\vec k\,\frac{\partial}{\partial z},\\
+                    \vec F &amp;=-\nabla U,\\
+                    F_x &amp;=-\frac{\partial U}{\partial x},\quad
+                    F_y=-\frac{\partial U}{\partial y},\quad
+                    F_z=-\frac{\partial U}{\partial z}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">∂ — частная производная: дифференцируем по одной переменной, остальные считаем постоянными.</p>
+              </div>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«Потенциальная энергия определяет запас работы сил. Если силы совершают работу, потенциальная энергия убывает». Коротко и точно — лучше многих определений.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li><em>F</em> = <em>dp</em>/<em>dt</em> — более общая запись второго закона, чем <em>F</em> = <em>ma</em>.</li>
+                  <li>Консервативные силы не зависят от формы пути; для них можно ввести потенциальную энергию.</li>
+                  <li>Полная механическая энергия сохраняется, только если сторонние силы не совершают работу.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Тело движется по замкнутой траектории в поле силы тяжести. Чему равна работа силы тяжести?</p>
+                  <p class="check-answer">Нулю: сила тяжести консервативна, а работа по замкнутому контуру для неё равна нулю.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Почему U отрицательна?</h4>
+                <p>Мы выбрали ноль на бесконечности. Чтобы увести тело из поля тяготения, нужно совершить работу — значит, в связанном состоянии энергия меньше нуля.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Градиент — это стрелка</h4>
+                <p>Он показывает, куда потенциал растёт быстрее всего. Минус перед градиентом разворачивает силу в сторону «скатывания».</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section class="chapter" id="k04" data-title="Момент и инерция" data-pages="7,8,9,10">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">04</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Четвёртая пара</p>
+              <h2 class="chapter-title">Момент, инерция, центр масс</h2>
+              <p class="chapter-dek">Вращательное движение теми же словами: сила превращается в момент, масса — в момент инерции.</p>
+              <div class="chapter-meta"><span>с. 7–10</span><span>6 минут</span><button class="source-link" type="button" data-page="7">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Для поступательного движения главный герой — сила. Для вращательного — её момент: важно не только как сильно тянуть, но и на каком расстоянии от оси.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Момент силы и момент импульса</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec M &amp;=\vec r\times\vec F,\\
+                    \vec L &amp;=\vec r\times\vec p,\\
+                    \vec M &amp;=\frac{d\vec L}{dt}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Момент силы — причина изменения момента импульса. В СИ: <em>M</em> — Н·м, <em>L</em> — кг·м²/с.</p>
+              </div>
+
+              <p>Если ось вращения закреплена, удобно смотреть на проекцию момента импульса на эту ось. Для точки на расстоянии <em>R</em> от оси:</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Закреплённая ось</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    L_z &amp;=Rp,\\
+                    v &amp;=\omega R,\\
+                    I &amp;=\frac{L}{\omega},\\
+                    L &amp;=I\omega.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">В конспекте момент импульса иногда обозначен <em>l</em> вместо <em>L</em>; здесь используем <em>L</em>, чтобы не путать с длиной.</p>
+              </div>
+
+              <h3 class="subhead">Момент инерции: «масса» вращения</h3>
+              <p>Момент инерции зависит не только от массы, но и от того, как она распределена относительно оси. Чем дальше масса от оси, тем труднее раскрутить тело.</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Сплошной диск</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    dI &amp;=r^2\,dm,\\
+                    dm &amp;=\rho\,dV=\rho h\,r\,dr\,d\varphi,\\
+                    I &amp;=\int dI
+                    =h\rho\int_0^{2\pi}d\varphi\int_0^R r^3\,dr
+                    =\frac12mR^2.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Диск разбивается на кольца. Интеграл по φ даёт полный оборот 2π, интеграл по <em>r</em> «набирает» радиус от центра до края.</p>
+              </div>
+
+              <figure class="figure figure-disk">
+                <div class="figure-art">
+                  <svg viewBox="0 0 420 250" role="img" aria-label="Диск разбит на тонкие кольца; момент инерции кольца равен r квадрат dm">
+                    <ellipse cx="182" cy="136" rx="122" ry="52" class="fig-disc" />
+                    <ellipse cx="182" cy="136" rx="88" ry="37" class="fig-disc-ring" />
+                    <ellipse cx="182" cy="136" rx="52" ry="22" class="fig-disc-ring" />
+                    <line x1="182" y1="136" x2="291" y2="165" class="fig-dash" />
+                    <line x1="182" y1="136" x2="182" y2="30" class="fig-axis-line" marker-end="url(#axisArrow)" />
+                    <text x="190" y="25" class="fig-label">ось</text>
+                    <text x="232" y="157" class="fig-label fig-label-small">R</text>
+                    <text x="151" y="128" class="fig-label fig-label-small">r</text>
+                    <path d="M 178 126 A 17 17 0 0 1 197 131" class="fig-angle" />
+                    <text x="199" y="122" class="fig-label fig-label-small">dr</text>
+                    <text x="196" y="96" class="fig-small">кольцо: dm, радиус r</text>
+                  </svg>
+                </div>
+                <figcaption>Разбиение диска на кольца — тот же приём, что и разбиение площади на полоски в интеграле.</figcaption>
+              </figure>
+
+              <h3 class="subhead">Система точек и центр масс</h3>
+              <p>Любую систему частиц можно описать через центр масс. Тогда кинетическая энергия распадается на движение системы как целого и движение относительно центра.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Теорема Кёнига и момент инерции системы</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec R &amp;=\frac{1}{M}\sum_i m_i\vec r_i,\\
+                    \vec r_i &amp;=\vec R+\vec r_i',\\
+                    E_k &amp;=\frac12MV^2+\frac12\sum_i m_i v_i'^2,\\
+                    I &amp;=I_C+MR^2.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Последняя строка — теорема Гюйгенса–Штейнера: момент инерции относительно любой оси равен моменту относительно параллельной оси через центр масс плюс <em>MR</em>².</p>
+              </div>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«Момент инерции — новый друг». С ним вращательная динамика становится почти копией поступательной: <em>L</em> = <em>I</em>ω, <em>M</em> = <em>I</em>ε.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Момент силы меняет момент импульса; без момента <em>L</em> сохраняется.</li>
+                  <li>Момент инерции зависит от распределения массы относительно оси.</li>
+                  <li>Кинетическая энергия системы = энергия центра масс + энергия относительного движения.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Два сплошных диска одинаковой массы, но разных радиусов. У какого момент инерции больше?</p>
+                  <p class="check-answer">У диска с большим радиусом: <em>I</em> = ½<em>mR</em>², а масса распределена дальше от оси.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Ось имеет значение</h4>
+                <p>Одно и то же тело может иметь разные моменты инерции относительно разных осей. Поэтому в задачах всегда уточняют, относительно чего считать.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Диск, обруч, цилиндр</h4>
+                <p>У обруча вся масса на радиусе <em>R</em>, поэтому <em>I</em> = <em>mR</em>². У диска масса «размазана» к центру, и момент вдвое меньше. Для цилиндров той же массы и радиуса: полый — <em>I</em> = <em>MR</em>², сплошной — ½<em>MR</em>².</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 05 -->
+        <section class="chapter" id="k05" data-title="Гироскоп" data-pages="10,11">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">05</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Пятая пара</p>
+              <h2 class="chapter-title">Гироскоп и сохранение момента</h2>
+              <p class="chapter-dek">Почему волчок не падает, а прецессирует — и как из этого получается второй закон Кеплера.</p>
+              <div class="chapter-meta"><span>с. 10–11</span><span>4 минуты</span><button class="source-link" type="button" data-page="10">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Гироскоп кажется упрямым: его ось не хочет поворачиваться. На самом деле она поворачивается — но не туда, куда тянет сила, а перпендикулярно ей. Виноват всё тот же <em>dL</em>/<em>dt</em>.</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Прецессия</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec M &amp;=\frac{d\vec L}{dt},\\
+                    M &amp;=mgl,\\
+                    \frac{d\vec L}{dt} &amp;=\vec\Omega\times\vec L,\\
+                    \Omega &amp;=\frac{M}{L}=\frac{mgl}{I\omega}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Ω — угловая скорость прецессии, <em>l</em> — расстояние от точки подвеса до оси колеса. Чем быстрее вращается колесо, тем медленнее прецессирует ось.</p>
+              </div>
+
+              <figure class="figure figure-gyro">
+                <div class="figure-art">
+                  <svg viewBox="0 0 480 310" role="img" aria-label="Гироскоп: ось колеса прецессирует вокруг вертикали под действием момента силы тяжести">
+                    <line x1="240" y1="42" x2="240" y2="276" class="fig-axis-line" stroke-dasharray="4 6" />
+                    <line x1="240" y1="70" x2="360" y2="126" class="fig-vector" marker-end="url(#axisArrow)" />
+                    <line x1="240" y1="70" x2="145" y2="190" class="fig-vector fig-vector-accent" marker-end="url(#axisArrow)" />
+                    <circle cx="240" cy="70" r="6" class="fig-point" />
+                    <ellipse cx="352" cy="126" rx="54" ry="25" class="fig-gyro-disc" transform="rotate(24 352 126)" />
+                    <ellipse cx="352" cy="126" rx="54" ry="25" class="fig-gyro-ring" transform="rotate(24 352 126)" />
+                    <path d="M 240 70 C 292 90 318 104 352 126" class="fig-dash" />
+                    <path d="M 176 220 C 246 262 332 252 366 190" class="fig-orbit-arrow" marker-end="url(#axisArrow)" />
+                    <text x="371" y="118" class="fig-label">L</text>
+                    <text x="133" y="203" class="fig-label fig-label-accent">mg</text>
+                    <text x="373" y="211" class="fig-label fig-label-small">Ω</text>
+                    <text x="247" y="288" class="fig-small">ось прецессии</text>
+                  </svg>
+                </div>
+                <figcaption>Момент силы тяжести горизонтален; изменение <em>L</em> тоже горизонтально — поэтому ось начинает обходить вертикаль.</figcaption>
+              </figure>
+
+              <h3 class="subhead">Когда момент равен нулю</h3>
+              <p>Если внешний момент отсутствует, момент импульса сохраняется. Не «примерно», а векторно: каждая компонента остаётся постоянной, если равна нулю соответствующая компонента момента.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Сохранение момента импульса</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec M&amp;=0 \quad\Rightarrow\quad \vec L=\mathrm{const},\\
+                    M_x&amp;=0 \quad\Rightarrow\quad L_x=\mathrm{const}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Это позволяет описывать вращение без знания внутренних сил системы.</p>
+              </div>
+
+              <h3 class="subhead">Кеплер без формул</h3>
+              <p>На планету действует только гравитация, направленная к Солнцу. Вектор силы параллелен радиус-вектору, поэтому момент силы равен нулю, а момент импульса сохраняется.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Центральная сила и площадь</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec M &amp;=\vec r\times\vec F_{\mathrm{gr}}=0
+                    \quad (\vec r\parallel\vec F_{\mathrm{gr}}),\\
+                    \vec L &amp;=\vec r\times\vec p=\mathrm{const},\\
+                    \frac{dS}{dt} &amp;=\frac12\left|\vec r\times\vec v\right|=\mathrm{const}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Секторная скорость постоянна: планета заметает равные площади за равные времена. Это второй закон Кеплера.</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Тонкость</span>
+                <p>Земля меняет времена года не из-за самого закона сохранения момента, а из-за наклона оси и эллиптичности орбиты. Но постоянство <em>L</em> действительно следует из центральности силы тяготения.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Момент силы перпендикулярен <em>L</em> — поэтому ось гироскопа прецессирует, а не падает.</li>
+                  <li>Без внешнего момента <em>L</em> сохраняется векторно.</li>
+                  <li>Для центральной силы сохраняется <em>L</em>; следствие — закон равных площадей.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>В какую сторону повернётся ось волчка, если момент силы тяжести направлен горизонтально?</p>
+                  <p class="check-answer">Горизонтально и перпендикулярно <em>L</em> — то есть ось начнёт прецессировать вокруг вертикали, описывая конус.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Почему не падает?</h4>
+                <p>Сила тяжести создаёт момент, но он меняет направление <em>L</em>, а не просто «опрокидывает» ось. В результате ось обходит вертикаль.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Гироскоп в технике</h4>
+                <p>Инерциальные навигационные системы, гирокомпасы и стабилизаторы используют одно и то же свойство: ось сохраняет направление, если момент мал.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section class="chapter" id="k06" data-title="СТО: время и длина" data-pages="12,13">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">06</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Шестая пара</p>
+              <h2 class="chapter-title">СТО: время и длина</h2>
+              <p class="chapter-dek">Светочасы, относительность одновременности и коэффициент, который меняет всё.</p>
+              <div class="chapter-meta"><span>с. 12–13</span><span>5 минут</span><button class="source-link" type="button" data-page="12">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">В классике скорости складываются: <em>V</em> + <em>v</em>. В специальной теории относительности свет ведёт себя иначе: <em>c</em> + <em>V</em> = <em>c</em>. Это не ошибка сложения, а другой принцип устройства пространства и времени.</p>
+
+              <div class="callout">
+                <span class="callout-label">Принцип</span>
+                <p>Скорость света в вакууме одинакова во всех инерциальных системах отсчёта. Никакое движение источника или наблюдателя её не меняет.</p>
+              </div>
+
+              <p>Представьте светочасы: два зеркала на расстоянии <em>l</em>, между которыми летает импульс. В системе зеркал один такт занимает <em>t</em>₀ = 2<em>l</em>/<em>c</em>. Если зеркала движутся, свет проходит по диагонали — и путь получается длиннее.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Замедление времени</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    t_0 &amp;=\frac{2l}{c},\\
+                    2\sqrt{l^2+\left(\frac{vt}{2}\right)^2} &amp;=ct,\\
+                    t &amp;=\frac{2l}{c\sqrt{1-v^2/c^2}}=\gamma t_0.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Собственное время <em>t</em>₀ измеряет наблюдатель, относительно которого часы покоятся. Движущиеся часы идут медленнее.</p>
+              </div>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Лоренц-фактор</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \gamma=\frac{1}{\sqrt{1-\beta^2}},\qquad
+                  \beta=\frac{v}{c}.
+                $$</div>
+                <p class="formula-caption">При <em>v</em> ≪ <em>c</em> γ ≈ 1, и релятивистские эффекты практически незаметны. При <em>v</em> → <em>c</em> γ → ∞.</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Сверено</span>
+                <p>В тетради β местами записана как <em>v</em>²/<em>c</em>². Правильное определение: β = <em>v</em>/<em>c</em>. Тогда γ = 1/√(1 − β²).</p>
+              </aside>
+
+              <h3 class="subhead">Сокращение длины</h3>
+              <p>Длина тоже относительна: она зависит от того, в какой системе одновременно измеряются координаты концов стержня. Для наблюдателя, относительно которого стержень движется, он короче.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Лоренцево сокращение</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  l=\frac{l_0}{\gamma}=l_0\sqrt{1-\frac{v^2}{c^2}}.
+                $$</div>
+                <p class="formula-caption"><em>l</em>₀ — собственная длина в системе, где стержень покоится. Сокращается только продольный размер.</p>
+              </div>
+
+              <div class="lab" id="lorentzLab">
+                <div class="lab-head">
+                  <div>
+                    <p class="lab-kicker">Интерактив</p>
+                    <h3>Лоренц-лаборатория</h3>
+                  </div>
+                  <div class="gamma-readout"><span>γ</span><strong id="gammaValue">1.250</strong></div>
+                </div>
+                <div class="lab-controls">
+                  <label for="betaRange">Скорость β = v/c</label>
+                  <div class="range-row">
+                    <input id="betaRange" type="range" min="0" max="0.999" step="0.001" value="0.6" />
+                    <output id="betaValue" for="betaRange">0.600</output>
+                  </div>
+                  <div class="range-scale"><span>0</span><span>0.25c</span><span>0.5c</span><span>0.75c</span><span>0.999c</span></div>
+                </div>
+                <div class="lab-results">
+                  <div class="lab-result">
+                    <span>Время: 1 с собственного</span>
+                    <strong id="timeDilation">1.25 с</strong>
+                    <div class="lab-bar"><span id="timeBar"></span></div>
+                  </div>
+                  <div class="lab-result">
+                    <span>Длина: 1 м собственной</span>
+                    <strong id="lengthContraction">0.80 м</strong>
+                    <div class="lab-bar lab-bar-accent"><span id="lengthBar"></span></div>
+                  </div>
+                </div>
+                <p class="lab-note" id="labNote">При β = 0.6 движущиеся часы отстают примерно на 20%.</p>
+              </div>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«И мы, и пассажиры будем правы». В СТО нет «настоящей» одновременности: два события, одновременные в одной системе, могут быть неодновременными в другой.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Скорость света одинакова во всех инерциальных системах.</li>
+                  <li>Движущиеся часы идут медленнее: <em>t</em> = γ<em>t</em>₀.</li>
+                  <li>Движущийся стержень короче: <em>l</em> = <em>l</em>₀/γ.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>При β = 0.8 чему равен γ?</p>
+                  <p class="check-answer">γ = 1/√(1 − 0.64) = 1/0.6 = 5/3 ≈ 1.667. Один час собственного времени растянется до 1 ч 40 мин в лабораторной системе.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Почему «оба правы»?</h4>
+                <p>Потому что одновременность не абсолютна. Наблюдатели по-разному делят пространство и время, но законы физики у них одинаковые.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Свет — не пуля</h4>
+                <p>К скорости света нельзя просто прибавить скорость источника. Именно постоянство <em>c</em> заставляет пересмотреть сложение скоростей.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 07 -->
+        <section class="chapter" id="k07" data-title="Лоренц" data-pages="14,15">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">07</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Седьмая пара</p>
+              <h2 class="chapter-title">Преобразования Лоренца</h2>
+              <p class="chapter-dek">Как координаты и время одного наблюдателя переводятся в координаты другого — без разрывов и противоречий.</p>
+              <div class="chapter-meta"><span>с. 14–15</span><span>5 минут</span><button class="source-link" type="button" data-page="14">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Если скорость света одна и та же, а координаты и время — нет, нужны формулы перевода. Это и есть преобразования Лоренца: не «поправка», а полноценная замена преобразований Галилея.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Стандартная ориентация осей</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    x' &amp;=\gamma\left(x-vt\right),\\
+                    t' &amp;=\gamma\left(t-\frac{v}{c^2}x\right),\\[2pt]
+                    x &amp;=\gamma\left(x'+vt'\right),\\
+                    t &amp;=\gamma\left(t'+\frac{v}{c^2}x'\right).
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Система <em>S</em>′ движется относительно <em>S</em> вдоль оси <em>x</em> со скоростью <em>v</em>. В пределе <em>v</em> ≪ <em>c</em> получается <em>x</em>′ = <em>x</em> − <em>vt</em>, <em>t</em>′ = <em>t</em>.</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">О знаках</span>
+                <p>В конспекте выбрана противоположная ориентация: там <em>x</em>′ = γ(<em>x</em> + <em>vt</em>). Это эквивалентно замене <em>v</em> → −<em>v</em>; главное — не смешивать два соглашения в одной задаче.</p>
+              </aside>
+
+              <h3 class="subhead">Не координаты, а интервалы</h3>
+              <p>Для динамики важно не само начало координат, а разности. Если вычесть два события, преобразования применяются к Δ<em>x</em> и Δ<em>t</em>.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Приращения</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \Delta x' &amp;=\gamma\left(\Delta x-v\Delta t\right),\\
+                    \Delta t' &amp;=\gamma\left(\Delta t-\frac{v}{c^2}\Delta x\right).
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Преобразования линейны, поэтому для разностей формула выглядит точно так же, как для координат.</p>
+              </div>
+
+              <h3 class="subhead">Интервал: ещё один инвариант</h3>
+              <p>Отдельные Δ<em>x</em> и Δ<em>t</em> меняются при переходе между системами, но их комбинация — пространственно-временной интервал — остаётся одной и той же.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Пространственно-временной интервал</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \Delta S^2=c^2\Delta t^2-\left(\Delta x^2+\Delta y^2+\Delta z^2\right).
+                $$</div>
+                <p class="formula-caption">Знак Δ<em>S</em>² классифицирует пары событий: времениподобные, пространственноподобные и светоподобные. Во всех инерциальных системах Δ<em>S</em>² одинаков.</p>
+              </div>
+
+              <h3 class="subhead">Сложение скоростей</h3>
+              <p>Если тело движется со скоростью <em>u</em>′ в системе <em>S</em>′, то в системе <em>S</em> его скорость не равна <em>u</em>′ + <em>v</em>. Знаменатель «тормозит» результат и не даёт превысить <em>c</em>.</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Релятивистское сложение скоростей</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    u_x &amp;=\frac{u_x'+v}{1+\dfrac{u_x'v}{c^2}},\\[4pt]
+                    u_y &amp;=\frac{u_y'}{\gamma\left(1+\dfrac{u_x'v}{c^2}\right)},\\[4pt]
+                    u_z &amp;=\frac{u_z'}{\gamma\left(1+\dfrac{u_x'v}{c^2}\right)}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">При <em>u</em>′<em>v</em>/<em>c</em>² ≪ 1 знаменатель близок к единице, и формулы переходят в классические.</p>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Сверено</span>
+                <p>В тетради в <em>y</em>- и <em>z</em>-компонентах потерян множитель 1/γ и ошибочно прибавлена <em>v</em> к поперечной скорости. Правильные формулы — выше.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Лоренц-преобразования перемешивают пространство и время.</li>
+                  <li>При малых скоростях они переходят в преобразования Галилея.</li>
+                  <li>Релятивистское сложение скоростей не позволяет превысить <em>c</em>.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Складываются ли скорости <em>c</em> и <em>c</em> в <em>2c</em>?</p>
+                  <p class="check-answer">Нет. По формуле (<em>c</em> + <em>c</em>)/(1 + <em>c</em>²/<em>c</em>²) = <em>c</em>. Скорость света остаётся <em>c</em>.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Проверка пределом</h4>
+                <p>Хорошая формула обязана выдерживать проверку: при <em>v</em> → 0 и γ → 1 преобразования Лоренца должны стать обычными.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Не путайте знак</h4>
+                <p>Выбор «плюс» или «минус» зависит от того, в какую сторону движется штрихованная система. Физика не меняется, меняется только запись.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 08 -->
+        <section class="chapter" id="k08" data-title="Релятивистская динамика" data-pages="15,16">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">08</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Восьмая пара</p>
+              <h2 class="chapter-title">Релятивистская динамика</h2>
+              <p class="chapter-dek">Импульс, масса и энергия, когда скорость сравнима со скоростью света.</p>
+              <div class="chapter-meta"><span>с. 15–16</span><span>4 минуты</span><button class="source-link" type="button" data-page="15">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">При больших скоростях второй закон Ньютона в форме <em>F</em> = <em>ma</em> перестаёт работать. Остаётся более общая запись — через импульс, но сам импульс тоже меняется.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Импульс и сила</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \vec p &amp;=\gamma m_0\vec v,\\
+                    \vec F &amp;=\frac{d\vec p}{dt}
+                    =\frac{d}{dt}\left(\gamma m_0\vec v\right).
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption"><em>m</em>₀ — масса покоя. В современной записи массой называют именно её; γ — свойство движения, а не «прибавка массы».</p>
+              </div>
+
+              <div class="callout">
+                <span class="callout-label">Тонкость</span>
+                <p>В СТО сила не обязана быть параллельна ускорению. Поэтому запись <em>F</em> = <em>ma</em> с постоянной <em>m</em> не сохраняется: инерция зависит от направления.</p>
+              </div>
+
+              <h3 class="subhead">Энергия</h3>
+              <p>Эйнштейн связал массу и энергию: даже покоящееся тело обладает энергией <em>m</em>₀<em>c</em>². Движущееся — полной энергией γ<em>m</em>₀<em>c</em>².</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Энергия и импульс</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    E_0 &amp;=m_0c^2,\\
+                    E &amp;=\gamma m_0c^2,\\
+                    E^2 &amp;=(pc)^2+(m_0c^2)^2,\\
+                    E_k &amp;=E-E_0
+                    =(\gamma-1)m_0c^2.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">При <em>v</em> ≪ <em>c</em> разложение γ даёт <em>E</em>ₖ ≈ ½<em>m</em>₀<em>v</em>² — привычную школьную формулу. Энергия покоя <em>E</em>₀ = <em>m</em>₀<em>c</em>² инвариантна; полная энергия γ<em>m</em>₀<em>c</em>² — нет.</p>
+              </div>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Через импульс</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  E_k=\sqrt{(pc)^2+(m_0c^2)^2}-m_0c^2.
+                $$</div>
+                <p class="formula-caption">Полезная форма, когда известен импульс, а не скорость.</p>
+              </div>
+
+              <details class="derivation">
+                <summary><span class="derivation-label">Откуда берётся <em>E</em> = γ<em>m</em>₀<em>c</em>²</span><span class="derivation-plus">+</span></summary>
+                <div class="derivation-body">
+                  <p>Работа силы идёт на приращение кинетической энергии: <em>dE</em>ₖ = <em>F</em>·<em>dr</em>. Подставив <em>F</em> = <em>dp</em>/<em>dt</em> и проинтегрировав по частям, получаем</p>
+                  <p class="math-inline">$$E_k=\int_0^v v'\,dp = \gamma m_0c^2-m_0c^2.$$</p>
+                  <p>Полная энергия <em>E</em> = <em>E</em>ₖ + <em>m</em>₀<em>c</em>² оказывается равной γ<em>m</em>₀<em>c</em>².</p>
+                </div>
+              </details>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«Сила относительна: с точки зрения разных систем она будет отличаться и направлением, и длиной». Это прямое следствие преобразований Лоренца.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li><em>p</em> = γ<em>m</em>₀<em>v</em>; второй закон — <em>F</em> = <em>dp</em>/<em>dt</em>.</li>
+                  <li>Полная энергия <em>E</em> = γ<em>m</em>₀<em>c</em>², энергия покоя — <em>m</em>₀<em>c</em>².</li>
+                  <li>Разогнать массивное тело до <em>c</em> нельзя: γ → ∞, энергия тоже.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>При β = 0.6 чему равна кинетическая энергия в единицах <em>m</em>₀<em>c</em>²?</p>
+                  <p class="check-answer">γ = 1.25, поэтому <em>E</em>ₖ = (γ − 1)<em>m</em>₀<em>c</em>² = 0.25<em>m</em>₀<em>c</em>².</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Почему <em>c</em> — предел?</h4>
+                <p>С ростом <em>v</em> γ растёт, импульс и энергия стремятся к бесконечности. Никакой конечной работой нельзя разогнать массивное тело до <em>c</em>.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Масса — инвариант</h4>
+                <p>В старой литературе говорят о «релятивистской массе» γ<em>m</em>₀. Сегодня удобнее считать массу инвариантной, а энергию и импульс — компонентами одного вектора.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- 09 -->
+        <section class="chapter" id="k09" data-title="Колебания" data-pages="16,17,18,19">
+          <header class="chapter-head reveal">
+            <div class="chapter-index">09</div>
+            <div class="chapter-heading">
+              <p class="chapter-kicker">Девятая пара · финал</p>
+              <h2 class="chapter-title">Колебания: пружина, маятник, затухание</h2>
+              <p class="chapter-dek">Одна и та же математика для пружины, контура и маятника — плюс трение, которое всё меняет.</p>
+              <div class="chapter-meta"><span>с. 16–19</span><span>7 минут</span><button class="source-link" type="button" data-page="16">Страница оригинала ↗</button></div>
+            </div>
+          </header>
+
+          <div class="chapter-grid">
+            <div class="chapter-main">
+              <p class="lead">Гармонический осциллятор — это система, которая после отклонения от равновесия стремится вернуться обратно. Пружина, математический маятник и идеальный <em>LC</em>-контур описываются одним уравнением.</p>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Уравнение и кинематика колебаний</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    \ddot x+\omega_0^2x &amp;=0,\\
+                    x(t) &amp;=A\cos\left(\omega_0t+\varphi\right),\\
+                    v(t) &amp;=-A\omega_0\sin\left(\omega_0t+\varphi\right),\\
+                    a(t) &amp;=-A\omega_0^2\cos\left(\omega_0t+\varphi\right)=-\omega_0^2x,\\
+                    \omega_0 &amp;=\sqrt{\frac{k}{m}},\qquad
+                    T=\frac{2\pi}{\omega_0}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption"><em>A</em> — амплитуда, φ — начальная фаза. Ускорение всегда направлено к положению равновесия; его максимум равен <em>A</em>ω₀².</p>
+              </div>
+
+              <div class="definition-grid definition-grid-three">
+                <div class="definition"><span class="definition-label">Пружина</span><p>Возвращает сила <em>F</em> = −<em>kx</em>; частота ω₀ = √(<em>k</em>/<em>m</em>).</p></div>
+                <div class="definition"><span class="definition-label">LC-контур</span><p>Аналог пружины: заряд колеблется с ω₀ = 1/√(<em>LC</em>).</p></div>
+                <div class="definition"><span class="definition-label">Маятник</span><p>При малых углах φ̈ + (<em>g</em>/<em>b</em>)φ = 0; <em>b</em> — длина подвеса.</p></div>
+              </div>
+
+              <aside class="fix-note">
+                <span class="fix-label">Сверено</span>
+                <p>В тетради для <em>LC</em>-контура стоит <em>q</em>̈ + (1/<em>LC</em>)<em>q</em> = 0 — это верно, если обозначить ω₀² = 1/<em>LC</em>. Для математического маятника после <em>I</em> = <em>mb</em>² получается φ̈ + (<em>g</em>/<em>b</em>)φ = 0.</p>
+              </aside>
+
+              <h3 class="subhead">Маятник: от момента к уравнению</h3>
+              <p>Момент силы тяжести возвращает маятник к положению равновесия. Для малых углов sin φ ≈ φ — и уравнение становится линейным.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Математический маятник</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    M &amp;=-mgb\sin\varphi,\\
+                    I\ddot\varphi &amp;=-mgb\sin\varphi,\\
+                    I &amp;=mb^2,\\
+                    \ddot\varphi+\frac{g}{b}\sin\varphi &amp;=0
+                    \;\xrightarrow{\;\sin\varphi\approx\varphi\;}\;
+                    \ddot\varphi+\frac{g}{b}\varphi=0.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Приближение sin φ ≈ φ работает для малых углов. Для больших амплитуд период начинает зависеть от амплитуды.</p>
+              </div>
+
+              <h3 class="subhead">Энергия колебаний</h3>
+              <p>Кинетическая и потенциальная энергии переходят друг в друга. Их сумма постоянна, а каждая по отдельности меняется с удвоенной частотой — потому что зависит от квадрата синуса или косинуса.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Энергия гармонического осциллятора</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    E_k &amp;=\frac{mv^2}{2}
+                    =\frac{m\omega_0^2A^2}{2}\sin^2\left(\omega_0t+\varphi\right),\\
+                    E_p &amp;=\frac{kx^2}{2}
+                    =\frac{m\omega_0^2A^2}{2}\cos^2\left(\omega_0t+\varphi\right),\\
+                    E &amp;=E_k+E_p=\frac{m\omega_0^2A^2}{2}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">Полная энергия пропорциональна квадрату амплитуды. Именно поэтому при затухании энергия убывает вдвое быстрее амплитуды.</p>
+              </div>
+
+              <h3 class="subhead">Сложение колебаний</h3>
+              <p>Два гармонических колебания складываются как векторы амплитуд. Если одинаковые амплитуды <em>A</em> имеют разность фаз Δφ, результат зависит от косинуса этой разности. Для двух взаимно перпендикулярных колебаний точка описывает эллипс, окружность или отрезок.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Амплитуда суммы и фигура Лиссажу</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    A_{\mathrm{res}}^2 &amp;=A_1^2+A_2^2+2A_1A_2\cos\Delta\varphi,\\
+                    \frac{x^2}{A_1^2}+\frac{y^2}{A_2^2}
+                    &amp;-\frac{2xy\cos\Delta\varphi}{A_1A_2}
+                    =\sin^2\Delta\varphi.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">При Δφ = π/2 получается эллипс (при равных амплитудах — окружность); при Δφ = 0 или π — отрезок прямой.</p>
+              </div>
+
+              <h3 class="subhead">Затухание: когда появляется трение</h3>
+              <p>Добавим силу сопротивления, пропорциональную скорости. Она совершает отрицательную работу, и энергия колебаний постепенно переходит в тепло.</p>
+
+              <div class="formula-card">
+                <div class="formula-head"><span>Затухающие колебания</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    F_c &amp;=-\beta v,\\
+                    m\ddot x &amp;=-kx-\beta\dot x,\\
+                    \ddot x+2\gamma\dot x+\omega_0^2x &amp;=0,\qquad
+                    \gamma=\frac{\beta}{2m}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">γ — коэффициент затухания. При слабом трении колебания остаются почти гармоническими, но их амплитуда медленно убывает.</p>
+              </div>
+
+              <div class="formula-card formula-card-accent">
+                <div class="formula-head"><span>Огибающая и время жизни</span><button class="copy-formula" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg><span>Копировать</span></button></div>
+                <div class="math">$$
+                  \begin{aligned}
+                    E &amp;=E_0e^{-2\gamma t},\\
+                    A &amp;=A_0e^{-\gamma t},\\
+                    \tau &amp;=\frac{1}{\gamma}.
+                  \end{aligned}
+                $$</div>
+                <p class="formula-caption">За время τ амплитуда уменьшается в <em>e</em> раз, а энергия — в <em>e</em>² раз.</p>
+              </div>
+
+              <div class="oscilloscope" id="oscilloscope">
+                <div class="lab-head">
+                  <div>
+                    <p class="lab-kicker">Интерактив</p>
+                    <h3>Осциллограф затухания</h3>
+                  </div>
+                  <div class="osc-readout"><span id="oscTau">τ = 12.5 с</span><strong id="oscAmp">A/A₀ = 1.00</strong></div>
+                </div>
+                <div class="osc-screen">
+                  <canvas id="oscCanvas" width="900" height="380" aria-label="График затухающих колебаний"></canvas>
+                  <div class="osc-legend"><span><i class="legend-line"></i>x(t)</span><span><i class="legend-dash"></i>огибающая ±A₀e<sup>−γt</sup></span></div>
+                </div>
+                <div class="osc-controls">
+                  <label for="dampRange">Затухание γ <output id="dampOut">0.08</output></label>
+                  <input id="dampRange" type="range" min="0" max="0.32" step="0.01" value="0.08" />
+                  <label for="freqRange">Частота ω₀ <output id="freqOut">1.60</output></label>
+                  <input id="freqRange" type="range" min="0.8" max="3.2" step="0.05" value="1.6" />
+                  <button class="button button-small osc-play" id="oscPlay" type="button" aria-pressed="true"><svg class="icon"><use href="#i-pause"></use></svg><span>Пауза</span></button>
+                </div>
+                <p class="lab-note">График строится по формуле <em>x</em>(<em>t</em>) = <em>A</em>₀<em>e</em><sup>−γ<em>t</em></sup>cos(ω₀<em>t</em>). Нажмите «Пауза», чтобы рассмотреть огибающую.</p>
+              </div>
+
+              <details class="derivation">
+                <summary><span class="derivation-label">Почему энергия падает как <em>e</em><sup>−2γ<em>t</em></sup>?</span><span class="derivation-plus">+</span></summary>
+                <div class="derivation-body">
+                  <p>Мощность силы сопротивления: <em>dE</em>/<em>dt</em> = <em>F</em>c<em>v</em> = −β<em>v</em>². За период колебаний средний квадрат скорости пропорционален энергии: ⟨<em>v</em>²⟩ = <em>E</em>/<em>m</em>. Тогда</p>
+                  <p class="math-inline">$$dE/dt=-2\gamma E\quad\Rightarrow\quad E=E_0e^{-2\gamma t}.$$</p>
+                  <p>Так как <em>E</em> ∝ <em>A</em>², амплитуда убывает как <em>e</em><sup>−γ<em>t</em></sup>.</p>
+                </div>
+              </details>
+
+              <aside class="notebook-note">
+                <span class="note-label">Из тетради</span>
+                <p>«Последние две лекции — какая-то занимательная математика». Отчасти да: пружина, маятник и контур внезапно оказываются одной и той же задачей с разными буквами.</p>
+              </aside>
+
+              <div class="takeaway">
+                <h3>Запомнить</h3>
+                <ul>
+                  <li>Гармонический осциллятор описывается уравнением <em>x</em>̈ + ω₀²<em>x</em> = 0.</li>
+                  <li>Полная энергия пропорциональна <em>A</em>²; при затухании <em>A</em> ~ <em>e</em><sup>−γ<em>t</em></sup>, <em>E</em> ~ <em>e</em><sup>−2γ<em>t</em></sup>.</li>
+                  <li>Время жизни τ = 1/γ — удобная мера затухания.</li>
+                </ul>
+              </div>
+
+              <details class="check">
+                <summary>Проверить себя <span class="check-arrow">+</span></summary>
+                <div class="check-body">
+                  <p>Через время τ = 1/γ во сколько раз уменьшится энергия колебаний?</p>
+                  <p class="check-answer">В <em>e</em>² ≈ 7.39 раза: <em>E</em>(τ) = <em>E</em>₀<em>e</em><sup>−2</sup>.</p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="chapter-aside" aria-label="Заметки на полях">
+              <p class="margin-label">На полях</p>
+              <div class="margin-note">
+                <h4>Малое, но не любое</h4>
+                <p>Замена sin φ ≈ φ даёт ошибку меньше 1% примерно до 14°. Для больших углов нужен эллиптический интеграл.</p>
+              </div>
+              <div class="margin-note margin-note-accent">
+                <h4>Затухание и добротность</h4>
+                <p>Чем меньше γ, тем больше колебаний успевает совершить система. Добротность <em>Q</em> ≈ ω₀/(2γ) — ещё одна мера «качества» осциллятора.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <section class="practice-section" id="practice" data-title="Практикум">
+      <div class="practice-inner">
+        <div class="practice-head reveal">
+          <div>
+            <p class="section-kicker">Практикум · по приложенному документу</p>
+            <h2>29 вопросов — 29 разборов</h2>
+            <p class="practice-dek">
+              Документ разбит на шесть тем. Для каждого вопроса — короткий ответ,
+              формула или расчёт и ссылка на теорию. Сначала попробуйте ответить сами,
+              затем проверьте ход решения.
+            </p>
+          </div>
+          <aside class="coverage-card">
+            <span class="coverage-label">Покрытие</span>
+            <div class="coverage-main"><strong>6 / 6</strong><span>тем</span></div>
+            <p>29 вопросов · 29 ответов</p>
+            <a href="assets/source/questions.pdf" download>Исходный документ ↗</a>
+          </aside>
+        </div>
+
+        <div class="practice-toolbar reveal">
+          <div class="topic-strip" role="group" aria-label="Фильтр вопросов по темам">
+            <button class="topic-chip active" type="button" data-practice-filter="all">Все <b>29</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="kinematics">Кинематика и динамика <b>5</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="energy">Энергия и поля <b>2</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="conservation">Законы сохранения <b>4</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="oscillations">Колебания <b>9</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="waves">Волны и акустика <b>6</b></button>
+            <button class="topic-chip" type="button" data-practice-filter="relativity">СТО <b>3</b></button>
+          </div>
+          <span class="practice-count" id="practiceCount" aria-live="polite">29 из 29</span>
+        </div>
+
+        <div class="practice-grid" id="practiceGrid">
+          <article class="qa-card" data-practice-topic="kinematics">
+            <div class="qa-top"><span class="qa-topic">01 · Кинематика и динамика</span><span class="qa-id">1 / 5</span></div>
+            <h3 class="qa-question">Нормальное ускорение материальной точки зависит от…</h3>
+            <div class="qa-answer">
+              <p>В общем случае — от скорости и радиуса кривизны траектории. Если радиус задан, остаётся зависимость от модуля скорости. Поэтому вариант «от скорости» верен для движения по данной окружности, но полная формула всё равно содержит <em>R</em>.</p>
+              <div class="qa-formula">$$a_n=\frac{v^2}{R}=\omega^2R$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k02">глава 02 · нормальное ускорение</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="kinematics">
+            <div class="qa-top"><span class="qa-topic">01 · Кинематика и динамика</span><span class="qa-id">2 / 5</span></div>
+            <h3 class="qa-question">Что характеризует нормальное ускорение?</h3>
+            <div class="qa-answer">
+              <p>Изменение направления скорости. Модуль скорости меняет тангенциальная составляющая, а полное ускорение — векторная сумма обеих.</p>
+              <div class="qa-formula">$$\vec a=a_\tau\vec\tau+a_n\vec n,\qquad a_\tau=\dot v,\quad a_n=\frac{v^2}{R}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k02">глава 02 · касательное и нормальное</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="kinematics">
+            <div class="qa-top"><span class="qa-topic">01 · Кинематика и динамика</span><span class="qa-id">3 / 5</span></div>
+            <h3 class="qa-question">Один автомобиль приближается к перекрёстку со скоростью 60 км/ч, второй удаляется со скоростью 80 км/ч. Их скорости перпендикулярны. Чему равна скорость первого относительно второго?</h3>
+            <div class="qa-answer">
+              <p>Относительная скорость — это векторная разность \(\vec v_{12}=\vec v_1-\vec v_2\). При перпендикулярных направлениях модуль находится по теореме Пифагора.</p>
+              <div class="qa-formula">$$\left|\vec v_{12}\right|=\sqrt{60^2+80^2}=100\ \mathrm{km/h}$$</div>
+              <p>100 км/ч — модуль относительной скорости; её направление зависит от выбранных осей.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k01">глава 01 · векторы</a> · <a href="#k02">глава 02 · сложение</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="kinematics">
+            <div class="qa-top"><span class="qa-topic">01 · Кинематика и динамика</span><span class="qa-id">4 / 5</span></div>
+            <h3 class="qa-question">На тело действуют сила тяги 3 Н и сила трения 8 Н. Каков характер движения?</h3>
+            <div class="qa-answer">
+              <p>Пока тело движется, равнодействующая равна \(3-8=-5\) Н и направлена против скорости. Ускорение тоже направлено против движения: тело движется равнозамедленно.</p>
+              <div class="qa-formula">$$ma=F_{\mathrm{thrust}}-F_{\mathrm{fric}}=-5\ \mathrm{N}$$</div>
+              <p>После остановки сила трения покоя может уравновесить тягу — тогда тело останется в покое.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k03">глава 03 · второй закон Ньютона</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="kinematics">
+            <div class="qa-top"><span class="qa-topic">01 · Кинематика и динамика</span><span class="qa-id">5 / 5</span></div>
+            <h3 class="qa-question">Спутник движется по круговой орбите. Чему равна работа силы тяготения за половину периода?</h3>
+            <div class="qa-answer">
+              <p>Нулю. На круговой орбите сила тяготения направлена к центру, а скорость и малое перемещение — по касательной. В каждой точке \(F\perp d\vec r\), поэтому работа на любом участке равна нулю. Потенциальная энергия зависит только от <em>r</em> и за полпериода возвращается к прежнему значению.</p>
+              <div class="qa-formula">$$A=\int \vec F\cdot d\vec r=0,\qquad A=-\Delta U=0$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k03">глава 03 · работа и потенциал</a></p>
+          </article>
+
+          <article class="qa-card qa-primer" data-practice-topic="energy">
+            <div class="qa-top"><span class="qa-topic">Тема 02 · рабочее правило</span><span class="qa-id">градиент</span></div>
+            <h3 class="qa-question">Сила — это минус градиент потенциальной энергии</h3>
+            <div class="qa-primer-body">
+              <p>Если потенциальная энергия задана как функция координат, проекция силы на ось — производная со знаком минус. Дифференцируем по одной переменной, остальные считаем постоянными.</p>
+              <div class="qa-formula">$$F_x=-\frac{\partial U}{\partial x},\qquad F_y=-\frac{\partial U}{\partial y},\qquad F_z=-\frac{\partial U}{\partial z}$$</div>
+            </div>
+          </article>
+
+          <article class="qa-card" data-practice-topic="energy">
+            <div class="qa-top"><span class="qa-topic">02 · Энергия и поля</span><span class="qa-id">1 / 2</span></div>
+            <h3 class="qa-question">Потенциальная энергия \(U=-kxy\), \(k=2\). Чему равна проекция \(F_x\) в точке \((2;3)\)?</h3>
+            <div class="qa-answer">
+              <p>Берём частную производную по <em>x</em>, считая <em>y</em> константой: \(\partial U/\partial x=-ky\). Затем ставим минус из \(F_x=-\partial U/\partial x\).</p>
+              <div class="qa-formula">$$F_x=-\frac{\partial}{\partial x}(-kxy)=ky=2\cdot3=6\ \mathrm{N}$$</div>
+              <p>Для полноты: \(F_y=kx=4\) Н. В документе ответ 6 Н — верно.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k03">глава 03 · градиент потенциала</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="energy">
+            <div class="qa-top"><span class="qa-topic">02 · Энергия и поля</span><span class="qa-id">2 / 2</span></div>
+            <h3 class="qa-question">Потенциальная энергия \(U=Bxy-Cy\), \(B=1\), \(C=2\). Чему равна \(F_x\) в точке \((0;2)\)?</h3>
+            <div class="qa-answer">
+              <p>Слагаемое \(-Cy\) от <em>x</em> не зависит, поэтому при дифференцировании по <em>x</em> оно исчезает.</p>
+              <div class="qa-formula">$$F_x=-\frac{\partial U}{\partial x}=-By=-1\cdot2=-2\ \mathrm{N}$$</div>
+              <p>Проекция отрицательна: сила направлена против оси <em>x</em>. Для справки \(F_y=-(Bx-C)=2\) Н в этой точке.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k03">глава 03 · частные производные</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="conservation">
+            <div class="qa-top"><span class="qa-topic">03 · Законы сохранения</span><span class="qa-id">1 / 4</span></div>
+            <h3 class="qa-question">В каком случае импульс замкнутой системы тел остаётся постоянным?</h3>
+            <div class="qa-answer">
+              <p>Когда внешние силы отсутствуют или их векторная сумма равна нулю, а также когда внешние импульсы компенсируются. Внутренние силы попарно компенсируются по третьему закону Ньютона и на суммарный импульс не влияют.</p>
+              <div class="qa-formula">$$\frac{d\vec P}{dt}=\vec F_{\mathrm{ext}},\qquad \vec F_{\mathrm{ext}}=0\ \Rightarrow\ \vec P=\mathrm{const}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k03">глава 03 · импульс</a> · <a href="#k05">глава 05 · сохранение</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="conservation">
+            <div class="qa-top"><span class="qa-topic">03 · Законы сохранения</span><span class="qa-id">2 / 4</span></div>
+            <h3 class="qa-question">Материальная точка движется с постоянной скоростью. Как меняется её момент импульса относительно точки \((0;1)\)?</h3>
+            <div class="qa-answer">
+              <p>Остаётся неизменным. Для любой неподвижной точки отсчёта \(\vec L=\vec r\times\vec p\). Дифференцируем: \(\dot{\vec L}=\vec v\times\vec p+\vec r\times\dot{\vec p}\). При постоянной скорости \(\vec v\parallel\vec p\), первое слагаемое равно нулю, а сила равна нулю — второе тоже.</p>
+              <div class="qa-formula">$$\frac{d\vec L}{dt}=\vec v\times\vec p+\vec r\times\vec F=0$$</div>
+              <p>Выбор точки \((0;1)\) меняет значение \(\vec L\), но не его постоянство.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k04">глава 04 · момент импульса</a> · <a href="#k05">глава 05 · сохранение</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="conservation">
+            <div class="qa-top"><span class="qa-topic">03 · Законы сохранения</span><span class="qa-id">3 / 4</span></div>
+            <h3 class="qa-question">Маятник колеблется в вертикальной плоскости. В каком положении момент импульса относительно точки подвеса минимален?</h3>
+            <div class="qa-answer">
+              <p>В крайнем верхнем положении, где скорость обращается в нуль. Момент импульса точки \(L=mrv\sin\alpha\); при \(v=0\) он равен нулю — это минимум. В нижней точке скорость максимальна, поэтому модуль <em>L</em> максимален.</p>
+              <div class="qa-formula">$$L=mrv\sin\alpha,\qquad v=0\ \Rightarrow\ L=0$$</div>
+              <p>Если маятник совершает полный оборот, верхняя точка проходится со скоростью не нулевой — там минимум уже не обязан быть нулём.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k04">глава 04 · момент импульса</a> · <a href="#k09">глава 09 · маятник</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="conservation">
+            <div class="qa-top"><span class="qa-topic">03 · Законы сохранения</span><span class="qa-id">4 / 4</span></div>
+            <h3 class="qa-question">У какого цилиндра — сплошного или полого — момент инерции больше при одинаковых массе и радиусе?</h3>
+            <div class="qa-answer">
+              <p>У полого: его масса распределена дальше от оси. Для тонкостенного полого цилиндра \(I=MR^2\), для сплошного — \(I=\frac12MR^2\).</p>
+              <div class="qa-formula">$$I_{\mathrm{hollow}}=MR^2,\qquad I_{\mathrm{solid}}=\frac12MR^2$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k04">глава 04 · момент инерции</a></p>
+          </article>
+
+          <article class="qa-card qa-primer" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">Тема 04 · рабочая связка</span><span class="qa-id">x, v, a</span></div>
+            <h3 class="qa-question">Как связаны координата, скорость и ускорение осциллятора</h3>
+            <div class="qa-primer-body">
+              <p>Если \(x=A\cos(\omega t+\varphi)\), то скорость — производная по времени, ускорение — вторая производная. Ускорение всегда направлено к положению равновесия и пропорционально смещению.</p>
+              <div class="qa-formula-stack">
+                <div class="qa-formula">$$x=A\cos(\omega t+\varphi)$$</div>
+                <div class="qa-formula">$$v=-A\omega\sin(\omega t+\varphi)$$</div>
+                <div class="qa-formula">$$a=-A\omega^2\cos(\omega t+\varphi)=-\omega^2x$$</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">1 / 9</span></div>
+            <h3 class="qa-question">От чего зависит ускорение в процессе гармонических колебаний?</h3>
+            <div class="qa-answer">
+              <p>От амплитуды, частоты и фазы (то есть от текущего времени). В любой момент \(a=-\omega^2x\): чем больше смещение и частота, тем больше модуль ускорения. Если в тесте перечислены амплитуда, частота и фаза, то зависеть оно может от всех.</p>
+              <div class="qa-formula">$$a_{\max}=A\omega^2$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · уравнение колебаний</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">2 / 9</span></div>
+            <h3 class="qa-question">\(x(t)=A\cos(\omega t)\), \(A=0{,}1\), \(\omega=3{,}14\). Чему равно максимальное ускорение?</h3>
+            <div class="qa-answer">
+              <p>Максимум модуля ускорения достигается при максимальном смещении:</p>
+              <div class="qa-formula">$$a_{\max}=A\omega^2=0{,}1\cdot(3{,}14)^2\approx0{,}986\approx1\ \mathrm{m/s^2}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · x, v, a</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">3 / 9</span></div>
+            <h3 class="qa-question">\(x(t)=A\cos(\omega t)\), \(A=0{,}1\), \(\omega=3{,}14\). Чему равен период?</h3>
+            <div class="qa-answer">
+              <p>Период связан с циклической частотой:</p>
+              <div class="qa-formula">$$T=\frac{2\pi}{\omega}=\frac{6{,}28}{3{,}14}=2\ \mathrm{s}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · период</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">4 / 9</span></div>
+            <h3 class="qa-question">Маятник массой \(m\). Кинетическая энергия задаётся выражением…</h3>
+            <div class="qa-answer">
+              <p>Скорость осциллятора \(v=-A\omega\sin(\omega t)\). Подставляем в \(E_k=\frac12mv^2\):</p>
+              <div class="qa-formula">$$E_k=\frac12m\left[-A\omega\sin(\omega t)\right]^2=\frac{m\left[A\omega\sin(\omega t)\right]^2}{2}$$</div>
+              <p>Это совпадает с ответом документа: \(E=m[A\omega\sin(\omega t)]^2/2\).</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · энергия колебаний</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">5 / 9</span></div>
+            <h3 class="qa-question">Складываются два колебания одинаковой амплитуды \(A\) с разностью фаз \(2\pi/3\). Чему равна амплитуда результата?</h3>
+            <div class="qa-answer">
+              <p>Складываем по теореме косинусов для векторов амплитуд:</p>
+              <div class="qa-formula">$$A_{\mathrm{res}}^2=A^2+A^2+2A^2\cos\frac{2\pi}{3}=A^2$$</div>
+              <p>Поскольку \(\cos(2\pi/3)=-1/2\), получаем \(A_{\mathrm{res}}=A\).</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · сложение колебаний</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">6 / 9</span></div>
+            <h3 class="qa-question">При сложении \(x=0{,}3\cos(\omega t)\) и \(y=-0{,}7\sin(\omega t)\) точка движется…</h3>
+            <div class="qa-answer">
+              <p>Исключаем время: \(\cos(\omega t)=x/0{,}3\), \(\sin(\omega t)=-y/0{,}7\). Используем \(\cos^2+\sin^2=1\):</p>
+              <div class="qa-formula">$$\left(\frac{x}{0{,}3}\right)^2+\left(\frac{y}{0{,}7}\right)^2=1$$</div>
+              <p>Это эллипс с полуосями 0,3 и 0,7; большая ось направлена вдоль <em>y</em>.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · сложение колебаний</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">7 / 9</span></div>
+            <h3 class="qa-question">При сложении \(x=4\cos(\omega t)\) и \(y=2\sin(\omega t+\pi/2)\) точка движется…</h3>
+            <div class="qa-answer">
+              <p>Так как \(\sin(\alpha+\pi/2)=\cos\alpha\), получаем \(y=2\cos(\omega t)\). Тогда \(y=x/2\): это отрезок прямой, проходящий через I и III координатные четверти.</p>
+              <div class="qa-formula">$$y=2\cos(\omega t)=\frac{x}{2},\qquad -4\le x\le4$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · сложение колебаний</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">8 / 9</span></div>
+            <h3 class="qa-question">Какие колебания не являются гармоническими?</h3>
+            <div class="qa-answer">
+              <p>Затухающие свободные колебания: из-за трения амплитуда уменьшается, и движение уже не описывается чистым синусом или косинусом. Строго гармонические колебания возможны только при отсутствии затухания и при линейной возвращающей силе.</p>
+              <div class="qa-formula">$$\ddot x+2\gamma\dot x+\omega_0^2x=0$$</div>
+              <p>Это уравнение уже не гармоническое: в нём есть затухание.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · затухание</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="oscillations">
+            <div class="qa-top"><span class="qa-topic">04 · Гармонические колебания</span><span class="qa-id">9 / 9</span></div>
+            <h3 class="qa-question">Как изменится амплитуда затухающих колебаний за время \(3\tau\)?</h3>
+            <div class="qa-answer">
+              <p>За время \(\tau=1/\gamma\) амплитуда уменьшается в \(e\) раз. За \(3\tau\) — в \(e^3\) раз:</p>
+              <div class="qa-formula">$$A(3\tau)=A_0e^{-3\gamma\tau}=A_0e^{-3}\approx\frac{A_0}{20{,}1}$$</div>
+              <p>Энергия при этом уменьшится в \(e^6\) раз, поскольку \(E\propto A^2\).</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k09">глава 09 · время жизни</a></p>
+          </article>
+
+          <article class="qa-card qa-primer" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">Тема 05 · мини-теория</span><span class="qa-id">волны</span></div>
+            <h3 class="qa-question">Плоская, сферическая и круговая волна</h3>
+            <div class="qa-primer-body">
+              <p>В плоской волне фаза \(\omega t-kx\), скорость \(v=\omega/k\), длина волны \(\lambda=2\pi/k\). У сферической волны амплитуда падает как \(1/r\), у круговой на поверхности — как \(1/\sqrt r\), а интенсивность — как \(1/r\).</p>
+              <div class="qa-formula-stack">
+                <div class="qa-formula">$$\xi=A\cos(\omega t-kx)$$</div>
+                <div class="qa-formula">$$v=\frac{\omega}{k},\qquad \lambda=\frac{2\pi}{k}$$</div>
+                <div class="qa-formula">$$\xi=\frac{A_0}{r}e^{-\alpha r}\cos(\omega t-\vec k\cdot\vec r)$$</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">1 / 6</span></div>
+            <h3 class="qa-question">Уравнение \(\xi=(A_0/r)e^{-\alpha r}\cos(\omega t-\vec k\vec r)\). Что это за волна?</h3>
+            <div class="qa-answer">
+              <p>Это уравнение сферической затухающей волны. Множитель \(1/r\) описывает геометрическое ослабление из-за роста площади сферы, а \(e^{-\alpha r}\) — дополнительное поглощение в среде.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">2 / 6</span></div>
+            <h3 class="qa-question">\(\xi=0{,}6\cos(1650t-5x)\). Чему равна скорость волны?</h3>
+            <div class="qa-answer">
+              <p>Сравниваем с \(\cos(\omega t-kx)\): \(\omega=1650\), \(k=5\). Скорость — отношение этих коэффициентов.</p>
+              <div class="qa-formula">$$v=\frac{\omega}{k}=\frac{1650}{5}=330\ \mathrm{m/s}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">3 / 6</span></div>
+            <h3 class="qa-question">\(\xi=0{,}6\cos(1800t-5x)\). Чему равна длина волны?</h3>
+            <div class="qa-answer">
+              <p>Волновое число \(k=5\). Длина волны:</p>
+              <div class="qa-formula">$$\lambda=\frac{2\pi}{k}=\frac{2\pi}{5}=0{,}4\pi\approx1{,}26\ \mathrm{m}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">4 / 6</span></div>
+            <h3 class="qa-question">Как меняется интенсивность круговой волны на поверхности воды?</h3>
+            <div class="qa-answer">
+              <p>Энергия распределяется по окружности длиной \(2\pi r\), поэтому интенсивность убывает как \(1/r\). Амплитуда при этом убывает как \(1/\sqrt r\).</p>
+              <div class="qa-formula">$$I(r)\propto\frac{1}{r},\qquad A(r)\propto\frac{1}{\sqrt r}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">5 / 6</span></div>
+            <h3 class="qa-question">Что происходит с длиной волны при сближении источника и приёмника?</h3>
+            <div class="qa-answer">
+              <p>При сближении регистрируемая частота растёт, а длина волны уменьшается: \(\lambda'=v/f'\). Это эффект Доплера. При удалении — наоборот.</p>
+              <div class="qa-formula">$$f'=f\frac{v+v_{\mathrm{obs}}}{v-v_{\mathrm{src}}}$$</div>
+              <p>Формула записана для сближения; знаки зависят от выбранных направлений скоростей.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="waves">
+            <div class="qa-top"><span class="qa-topic">05 · Волны и акустика</span><span class="qa-id">6 / 6</span></div>
+            <h3 class="qa-question">Амплитуда звука увеличилась в 2 раза. Как изменилась длина волны?</h3>
+            <div class="qa-answer">
+              <p>Никак. Длина волны определяется скоростью распространения и частотой: \(\lambda=v/f\). Амплитуда — независимая характеристика интенсивности, а не частоты.</p>
+              <div class="qa-formula">$$\lambda=\frac{v}{f}$$</div>
+              <p>Длина волны от амплитуды не зависит.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#practice">мини-теория выше</a></p>
+          </article>
+
+          <article class="qa-card qa-primer" data-practice-topic="relativity">
+            <div class="qa-top"><span class="qa-topic">Тема 06 · рабочая формула</span><span class="qa-id">интервал</span></div>
+            <h3 class="qa-question">Интервал — величина, одинаковая во всех инерциальных системах</h3>
+            <div class="qa-primer-body">
+              <p>Вместо отдельных \(\Delta x\) и \(\Delta t\) в СТО используют интервал. Его квадрат может быть положительным, отрицательным или нулевым — это классификация пар событий.</p>
+              <div class="qa-formula">$$\Delta S^2=c^2\Delta t^2-\left(\Delta x^2+\Delta y^2+\Delta z^2\right)$$</div>
+            </div>
+          </article>
+
+          <article class="qa-card" data-practice-topic="relativity">
+            <div class="qa-top"><span class="qa-topic">06 · Специальная теория относительности</span><span class="qa-id">1 / 3</span></div>
+            <h3 class="qa-question">Два корабля летят навстречу со скоростями \(0{,}8c\) и \(0{,}5c\). Чему равна скорость сближения?</h3>
+            <div class="qa-answer">
+              <p>Относительная скорость в системе одного из кораблей получается по релятивистскому закону сложения:</p>
+              <div class="qa-formula">$$u=\frac{0{,}8c+0{,}5c}{1+0{,}8\cdot0{,}5}=\frac{1{,}3}{1{,}4}c\approx0{,}929c$$</div>
+              <p>Темп изменения расстояния в лабораторной системе при этом равен \(1{,}3c\), но это не скорость тела или сигнала в одной ИСО. Ответ документа \(0{,}93c\) относится к относительной скорости.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k07">глава 07 · сложение скоростей</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="relativity">
+            <div class="qa-top"><span class="qa-topic">06 · Специальная теория относительности</span><span class="qa-id">2 / 3</span></div>
+            <h3 class="qa-question">Какая величина инвариантна относительно преобразований Лоренца?</h3>
+            <div class="qa-answer">
+              <p>Энергия покоя \(E_0=m_0c^2\) (и масса покоя \(m_0\)), а также пространственно-временной интервал. Полная энергия \(E=\gamma m_0c^2\) и импульс меняются при переходе между системами.</p>
+              <div class="qa-formula">$$E_0=m_0c^2=\mathrm{inv},\qquad \Delta S^2=\mathrm{inv}$$</div>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k08">глава 08 · энергия покоя</a> · <a href="#k07">глава 07 · интервал</a></p>
+          </article>
+
+          <article class="qa-card" data-practice-topic="relativity">
+            <div class="qa-top"><span class="qa-topic">06 · Специальная теория относительности</span><span class="qa-id">3 / 3</span></div>
+            <h3 class="qa-question">Запишите формулу интервала между двумя событиями.</h3>
+            <div class="qa-answer">
+              <p>В декартовых координатах, с коэффициентом \(c\) перед временем:</p>
+              <div class="qa-formula">$$\Delta S=\sqrt{c^2\Delta t^2-\left(\Delta x^2+\Delta y^2+\Delta z^2\right)}$$</div>
+              <p>Если \(\Delta S^2>0\), интервал времениподобный; если \(<0\) — пространственноподобный; если \(=0\) — светоподобный.</p>
+            </div>
+            <p class="qa-ref">Теория: <a href="#k07">глава 07 · интервал</a></p>
+          </article>
+        </div>
+
+        <aside class="practice-caution reveal">
+          <span class="caution-label">Три уточнения к ответам документа</span>
+          <ul>
+            <li><strong>1.1.</strong> Нормальное ускорение зависит не только от скорости, но и от радиуса кривизны: \(a_n=v^2/R\).</li>
+            <li><strong>3.2.</strong> Момент импульса остаётся постоянным, если на точку не действует сила; выбор точки \((0;1)\) меняет значение, но не факт постоянства.</li>
+            <li><strong>6.1.</strong> \(0{,}93c\) — относительная скорость; \(1{,}3c\) — темп сближения в лабораторной системе, а не скорость движения тела.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cheatsheet" id="cheatsheet">
+      <div class="cheatsheet-inner">
+        <div class="cheatsheet-head reveal">
+          <div>
+            <p class="section-kicker section-kicker-light">Перед экзаменом</p>
+            <h2>Шпаргалка</h2>
+            <p>Самые нужные формулы — без выводов и лирики. Нажмите на формулу, чтобы скопировать её в LaTeX.</p>
+          </div>
+          <div class="cheatsheet-actions">
+            <a class="button button-light" href="assets/source/book.pdf" download><svg class="icon"><use href="#i-download"></use></svg> Скачать оригинал</a>
+            <a class="button button-ghost-light" href="#k01">Вернуться к главам</a>
+          </div>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Фильтр формул">
+          <button class="filter-chip active" type="button" data-filter="all">Все</button>
+          <button class="filter-chip" type="button" data-filter="kinematics">Кинематика</button>
+          <button class="filter-chip" type="button" data-filter="dynamics">Динамика</button>
+          <button class="filter-chip" type="button" data-filter="rotation">Вращение</button>
+          <button class="filter-chip" type="button" data-filter="relativity">СТО</button>
+          <button class="filter-chip" type="button" data-filter="oscillations">Колебания</button>
+        </div>
+
+        <div class="formula-grid" id="formulaGrid">
+          <article class="cheat-card" data-group="kinematics">
+            <span class="cheat-tag">Кинематика</span>
+            <div class="math">$$\vec v=\frac{d\vec r}{dt},\qquad \vec a=\frac{d^2\vec r}{dt^2}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="kinematics">
+            <span class="cheat-tag">Кинематика</span>
+            <div class="math">$$S=\int_{t_1}^{t_2}\left|\vec v\right|dt$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="kinematics">
+            <span class="cheat-tag">Кинематика</span>
+            <div class="math">$$a_n=\frac{v^2}{R},\qquad a_\tau=\dot v$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="dynamics">
+            <span class="cheat-tag">Динамика</span>
+            <div class="math">$$\vec F=\frac{d\vec p}{dt},\qquad \vec p=m\vec v$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="dynamics">
+            <span class="cheat-tag">Динамика</span>
+            <div class="math">$$\vec F=-\nabla U,\qquad U=-G\frac{m_1m_2}{r}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="dynamics">
+            <span class="cheat-tag">Динамика</span>
+            <div class="math">$$E=E_k+U,\qquad \Delta E=A_{\mathrm{ext}}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="rotation">
+            <span class="cheat-tag">Вращение</span>
+            <div class="math">$$\vec M=\vec r\times\vec F=\frac{d\vec L}{dt}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="rotation">
+            <span class="cheat-tag">Вращение</span>
+            <div class="math">$$L=I\omega,\qquad I_{\mathrm{disk}}=\frac12mR^2$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="rotation">
+            <span class="cheat-tag">Вращение</span>
+            <div class="math">$$I=I_C+MR^2,\qquad \Omega=\frac{mgl}{I\omega}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="relativity">
+            <span class="cheat-tag">СТО</span>
+            <div class="math">$$\gamma=\frac{1}{\sqrt{1-\beta^2}},\qquad \beta=\frac{v}{c}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="relativity">
+            <span class="cheat-tag">СТО</span>
+            <div class="math">$$t=\gamma t_0,\qquad l=\frac{l_0}{\gamma}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="relativity">
+            <span class="cheat-tag">СТО</span>
+            <div class="math">$$E^2=(pc)^2+(m_0c^2)^2$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="oscillations">
+            <span class="cheat-tag">Колебания</span>
+            <div class="math">$$\ddot x+\omega_0^2x=0,\qquad \omega_0=\sqrt{\frac{k}{m}}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="oscillations">
+            <span class="cheat-tag">Колебания</span>
+            <div class="math">$$x=A\cos(\omega_0t+\varphi)$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+          <article class="cheat-card" data-group="oscillations">
+            <span class="cheat-tag">Колебания</span>
+            <div class="math">$$A=A_0e^{-\gamma t},\qquad E=E_0e^{-2\gamma t}$$</div>
+            <button class="copy-formula copy-dark" type="button" aria-label="Скопировать формулу"><svg class="icon"><use href="#i-copy"></use></svg></button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="quiz-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Обратная связь</p>
+          <h2>Проверь себя</h2>
+          <p class="section-dek">Пять вопросов без подвоха. Если что-то не сходится — вернитесь к нужной главе, ссылки есть в разборе.</p>
+        </div>
+
+        <form class="quiz" id="quizForm" novalidate>
+          <div class="quiz-q" data-question="1">
+            <p class="quiz-number">01 / 05</p>
+            <h3>Что входит в систему отсчёта?</h3>
+            <div class="quiz-options">
+              <label><input type="radio" name="q1" value="a" /><span>Только система координат</span></label>
+              <label><input type="radio" name="q1" value="b" /><span>Тело отсчёта, система координат и часы</span></label>
+              <label><input type="radio" name="q1" value="c" /><span>Только тело отсчёта и сила</span></label>
+            </div>
+            <p class="quiz-explain" hidden>Тело отсчёта задаёт начало, координаты — положение, часы — время. Без всех трёх описание движения неполно.</p>
+          </div>
+
+          <div class="quiz-q" data-question="2">
+            <p class="quiz-number">02 / 05</p>
+            <h3>Почему обратная задача кинематики требует начальных условий?</h3>
+            <div class="quiz-options">
+              <label><input type="radio" name="q2" value="a" /><span>Потому что интеграл даёт произвольную постоянную</span></label>
+              <label><input type="radio" name="q2" value="b" /><span>Потому что ускорение всегда постоянно</span></label>
+              <label><input type="radio" name="q2" value="c" /><span>Потому что скорость света конечна</span></label>
+            </div>
+            <p class="quiz-explain" hidden>При интегрировании ускорения появляется <em>v</em>₀, при интегрировании скорости — <em>r</em>₀. Без них решение не единственно.</p>
+          </div>
+
+          <div class="quiz-q" data-question="3">
+            <p class="quiz-number">03 / 05</p>
+            <h3>Чему равен момент инерции сплошного диска относительно его оси?</h3>
+            <div class="quiz-options">
+              <label><input type="radio" name="q3" value="a" /><span><em>mR</em>²</span></label>
+              <label><input type="radio" name="q3" value="b" /><span>½<em>mR</em>²</span></label>
+              <label><input type="radio" name="q3" value="c" /><span>⅓<em>mR</em>²</span></label>
+            </div>
+            <p class="quiz-explain" hidden>Для сплошного диска <em>I</em> = ½<em>mR</em>². У обруча было бы <em>mR</em>², потому что вся масса находится на радиусе <em>R</em>.</p>
+          </div>
+
+          <div class="quiz-q" data-question="4">
+            <p class="quiz-number">04 / 05</p>
+            <h3>При β = 0.6 чему равен Лоренц-фактор γ?</h3>
+            <div class="quiz-options">
+              <label><input type="radio" name="q4" value="a" /><span>1.25</span></label>
+              <label><input type="radio" name="q4" value="b" /><span>1.67</span></label>
+              <label><input type="radio" name="q4" value="c" /><span>0.80</span></label>
+            </div>
+            <p class="quiz-explain" hidden>γ = 1/√(1 − 0.6²) = 1/0.8 = 1.25. Значение 1.67 соответствует β ≈ 0.8.</p>
+          </div>
+
+          <div class="quiz-q quiz-q-wide" data-question="5">
+            <p class="quiz-number">05 / 05</p>
+            <h3>Как меняется энергия затухающих колебаний?</h3>
+            <div class="quiz-options">
+              <label><input type="radio" name="q5" value="a" /><span>Линейно: <em>E</em> = <em>E</em>₀ − γ<em>t</em></span></label>
+              <label><input type="radio" name="q5" value="b" /><span>Как <em>e</em><sup>−γ<em>t</em></sup></span></label>
+              <label><input type="radio" name="q5" value="c" /><span>Как <em>e</em><sup>−2γ<em>t</em></sup></span></label>
+            </div>
+            <p class="quiz-explain" hidden>Амплитуда падает как <em>e</em><sup>−γ<em>t</em></sup>, а энергия пропорциональна <em>A</em>², поэтому <em>E</em> = <em>E</em>₀<em>e</em><sup>−2γ<em>t</em></sup>.</p>
+          </div>
+
+          <div class="quiz-footer">
+            <button class="button button-primary" type="submit">Показать результат</button>
+            <div class="quiz-score" id="quizScore" aria-live="polite">Выберите ответы во всех вопросах</div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="source-section" id="source">
+      <div class="source-inner">
+        <div class="source-copy reveal">
+          <p class="section-kicker">Первоисточник</p>
+          <h2>Тетрадь целиком</h2>
+          <p>Сайт — редакторская версия конспекта. Оригинальный PDF из 19 страниц сохранён без изменений: можно сверить формулы, посмотреть исходные схемы и просто полистать.</p>
+          <dl class="source-stats">
+            <div><dt>19</dt><dd>страниц</dd></div>
+            <div><dt>9</dt><dd>пар</dd></div>
+            <div><dt>1</dt><dd>PDF</dd></div>
+          </dl>
+          <div class="source-actions">
+            <a class="button button-primary" href="assets/source/book.pdf" download><svg class="icon"><use href="#i-download"></use></svg> Скачать PDF</a>
+            <button class="button button-outline" type="button" data-page="1">Открыть оригинал</button>
+          </div>
+          <p class="source-note">Страницы можно листать стрелками ← →. Для закрытия нажмите Esc.</p>
+        </div>
+
+        <div class="contact-sheet reveal" aria-label="Страницы оригинала">
+          <button type="button" data-page="1" aria-label="Открыть страницу 1"><img src="assets/pages/page-01.webp" alt="Страница 1" loading="lazy" /></button>
+          <button type="button" data-page="2" aria-label="Открыть страницу 2"><img src="assets/pages/page-02.webp" alt="Страница 2" loading="lazy" /></button>
+          <button type="button" data-page="3" aria-label="Открыть страницу 3"><img src="assets/pages/page-03.webp" alt="Страница 3" loading="lazy" /></button>
+          <button type="button" data-page="4" aria-label="Открыть страницу 4"><img src="assets/pages/page-04.webp" alt="Страница 4" loading="lazy" /></button>
+          <button type="button" data-page="5" aria-label="Открыть страницу 5"><img src="assets/pages/page-05.webp" alt="Страница 5" loading="lazy" /></button>
+          <button type="button" data-page="6" aria-label="Открыть страницу 6"><img src="assets/pages/page-06.webp" alt="Страница 6" loading="lazy" /></button>
+          <button type="button" data-page="7" aria-label="Открыть страницу 7"><img src="assets/pages/page-07.webp" alt="Страница 7" loading="lazy" /></button>
+          <button type="button" data-page="8" aria-label="Открыть страницу 8"><img src="assets/pages/page-08.webp" alt="Страница 8" loading="lazy" /></button>
+          <button type="button" data-page="9" aria-label="Открыть страницу 9"><img src="assets/pages/page-09.webp" alt="Страница 9" loading="lazy" /></button>
+          <button type="button" data-page="10" aria-label="Открыть страницу 10"><img src="assets/pages/page-10.webp" alt="Страница 10" loading="lazy" /></button>
+          <button type="button" data-page="11" aria-label="Открыть страницу 11"><img src="assets/pages/page-11.webp" alt="Страница 11" loading="lazy" /></button>
+          <button type="button" data-page="12" aria-label="Открыть страницу 12"><img src="assets/pages/page-12.webp" alt="Страница 12" loading="lazy" /></button>
+          <button type="button" data-page="13" aria-label="Открыть страницу 13"><img src="assets/pages/page-13.webp" alt="Страница 13" loading="lazy" /></button>
+          <button type="button" data-page="14" aria-label="Открыть страницу 14"><img src="assets/pages/page-14.webp" alt="Страница 14" loading="lazy" /></button>
+          <button type="button" data-page="15" aria-label="Открыть страницу 15"><img src="assets/pages/page-15.webp" alt="Страница 15" loading="lazy" /></button>
+          <button type="button" data-page="16" aria-label="Открыть страницу 16"><img src="assets/pages/page-16.webp" alt="Страница 16" loading="lazy" /></button>
+          <button type="button" data-page="17" aria-label="Открыть страницу 17"><img src="assets/pages/page-17.webp" alt="Страница 17" loading="lazy" /></button>
+          <button type="button" data-page="18" aria-label="Открыть страницу 18"><img src="assets/pages/page-18.webp" alt="Страница 18" loading="lazy" /></button>
+          <button type="button" data-page="19" aria-label="Открыть страницу 19"><img src="assets/pages/page-19.webp" alt="Страница 19" loading="lazy" /></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark">φ</span>
+        <span class="brand-copy"><strong>Механика</strong><small>конспект · 1 семестр</small></span>
+      </a>
+      <p>Собрано по конспекту из 19 страниц и практикуму по 29 вопросам. Формулы, схемы и редакторские примечания — 2026.</p>
+      <a class="footer-top" href="#top">Наверх <svg class="icon"><use href="#i-up"></use></svg></a>
+    </div>
+  </footer>
+
+  <dialog class="search-dialog" id="searchDialog">
+    <div class="search-box">
+      <div class="search-field">
+        <svg class="icon"><use href="#i-search"></use></svg>
+        <input id="searchInput" type="search" placeholder="Найти формулу, термин или тему…" autocomplete="off" aria-label="Поиск по конспекту" />
+        <button class="search-close" id="searchClose" type="button" aria-label="Закрыть поиск"><svg class="icon"><use href="#i-close"></use></svg></button>
+      </div>
+      <div class="search-hints"><span>↑ ↓ — выбрать</span><span>Enter — перейти</span><span>Esc — закрыть</span></div>
+      <div class="search-results" id="searchResults" aria-live="polite">
+        <p class="search-empty">Начните вводить запрос — поиск идёт по всем девяти главам, шпаргалке и вопросам.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="page-viewer" id="pageViewer" aria-label="Просмотр страниц оригинала">
+    <div class="viewer-top">
+      <span class="viewer-label">Оригинал конспекта · <strong id="viewerPage">1</strong> / 19</span>
+      <button class="viewer-close" id="viewerClose" type="button" aria-label="Закрыть просмотр"><svg class="icon"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="viewer-body">
+      <button class="viewer-nav viewer-prev" id="viewerPrev" type="button" aria-label="Предыдущая страница">←</button>
+      <img id="viewerImage" src="assets/pages/page-01.webp" alt="Страница 1 оригинала" />
+      <button class="viewer-nav viewer-next" id="viewerNext" type="button" aria-label="Следующая страница">→</button>
+    </div>
+    <div class="viewer-bottom"><span>← → листать</span><a id="viewerDownload" href="assets/source/book.pdf" download>Скачать PDF</a><span>Esc закрыть</span></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Наверх"><svg class="icon"><use href="#i-up"></use></svg></button>
+
+  <script defer src="vendor/katex/katex.min.js"></script>
+  <script defer src="vendor/katex/contrib/auto-render.min.js"></script>
+  <script defer src="app.js"></script>
+</body>
+</html>

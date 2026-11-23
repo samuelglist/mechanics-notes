@@ -1,0 +1,11 @@
+{
+  "name": "mechanics-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Редакторский сайт-конспект по механике: кинематика, динамика, вращение, СТО и колебания.",
+  "scripts": {
+    "start": "node scripts/serve.mjs 4175",
+    "check": "node scripts/check.mjs http://127.0.0.1:4175/"
+  }
+}

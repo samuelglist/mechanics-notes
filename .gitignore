@@ -1,0 +1,5 @@
+# локальные артефакты и проверки
+.shots/
+.tools/
+*.zip
+source-questions*
